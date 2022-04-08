@@ -1,9 +1,9 @@
 # Cheat-Sheets
 ## What is that about?
-In the beginning of 2022 I realized, that I have no good structure for my *knowledge base*. Over the time I used different kinds of tools with also different types of file extensions. For example, I used software like Excel, Word, OneNote, PowerPoint, simple PDF-Readers, Notion, Google Docs, Google Sheets, Notability, Apple Notes, simple pictures, simple text files and LaTeX files.
+In the beginning of 2022 I realized, that I have no good structure for my *knowledge base*. Over the time I used different kinds of tools with also different types of file extensions. For example, I used software like Excel, Word, OneNote, PowerPoint, simple PDF-Readers, Notion, Google Docs, Google Sheets, Notability, Apple Notes, simple pictures, simple text files and LaTeX files.  
 I also structured my files in a not optimized structure for a good knowledge base. My study notes were ordered by semesters and single modules. It was good for learning for a specific exam, but nowadays, I realize, that a lot of topics are connected within different modules and it is really hard to keep a good overview of some topics. I also hadn't short notes for each important topics. I often just marked up some (for me) important lines in a big script.
 
-Apart from my studies, I rarely took notes for my self. "I will remember that" or "I will know where to find it again in the future" aren't really working out in the future.
+Apart from my studies, I rarely took notes for my self. "I will remember that" or "I will know where to find it again in the future" aren't really working out in the future. 
 Because I am learning a lot of new things atm and I realized, that I don't really find information I need for my current projects in my previous notes, I decided to start taking this notes again. In this way, I would also like to share my notes with you.
 
 ## About me
