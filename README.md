@@ -1,4 +1,4 @@
-# Cheat-Sheets
+# IT-Cheat-Sheets
 ## What is that about?
 In the beginning of 2022 I realized, that I have no good structure for my *knowledge base*. Over the time I used different kinds of tools with also different types of file extensions. For example, I used software like Excel, Word, OneNote, PowerPoint, simple PDF-Readers, Notion, Google Docs, Google Sheets, Notability, Apple Notes, simple pictures, simple text files and LaTeX files.  
 I also structured my files in a not optimized structure for a good knowledge base. My study notes were ordered by semesters and single modules. It was good for learning for a specific exam, but nowadays, I realize, that a lot of topics are connected within different modules and it is really hard to keep a good overview of some topics. I also hadn't short notes for each important topics. I often just marked up some (for me) important lines in a big script.  
@@ -19,15 +19,16 @@ As you might have guessed, I'm going to focus primarily on **technical topics** 
 As the name implies, these are cheat sheets, and I try to keep the topics short and to the point. It should serve for me and hopefully also for you as a **reference book**.  
 More detailed information, explanations and backgrounds I will possibly publish in blogs at a later time. But this is just a thought.
 This cheat sheets will cover topics all about:
-- Software Engineering
-- Programming
-- Databases
+- [Computer Science](Computer-Science-Basics/Computer-Science.md)
+- [Software Engineering](Software-Engineering/Software-Engineering.md)
+- [Data Structures](Data-Structures/Data-Structures.md)
+- [Algorithms](Algorithms/Algorithms.md)
 - [Networks](Networks/Networks.md)
-- IT-Security
-- Operating System
-- Server Administration
-- DevOps
-- Cloud
+- [IT-Security](IT-Security/IT-Security.md)
+- [Operating-Systems](Operating-Systems/Operating-Systems.md)
+- [Server-Administration](Server-Administration/Server-Administration.md)
+- [DevOps](DevOps/DevOps.md)
+- [Cloud](Cloud/Cloud.md)
 
 ## Collaboration
 My core motivation for these cheat sheets was a nice and good knowledge base for myself where I can quickly look things up.  

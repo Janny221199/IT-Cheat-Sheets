@@ -10,7 +10,7 @@
           "type": "markdown",
           "state": {
             "file": "README.md",
-            "mode": "preview"
+            "mode": "source"
           }
         }
       }
@@ -89,14 +89,14 @@
   "active": "9cbfd78c5307bb68",
   "lastOpenFiles": [
     "README.md",
-    "Networks/Subnetting.md",
-    "Networks/Networks.md",
-    "Networks/Network-Topology.md",
-    "Networks/MAC-Address.md",
-    "Networks/IP-Address.md",
-    "Networks/Internet.md",
-    "Networks/ICMP.md",
-    "Networks/DHCP.md",
-    "Networks/OSI-Modell/OSI-Model.md"
+    "Server-Administration/Server-Administration.md",
+    "Cloud/Cloud.md",
+    "DevOps/DevOps.md",
+    "Operating-Systems/Operating-Systems.md",
+    "IT-Security/IT-Security.md",
+    "Algorithms/Algorithms.md",
+    "Data-Structures/Data-Structures.md",
+    "Databases/Databases.md",
+    "Software-Engineering/Software-Engineering.md"
   ]
 }
