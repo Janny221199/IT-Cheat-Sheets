@@ -10,7 +10,7 @@
           "type": "markdown",
           "state": {
             "file": "README.md",
-            "mode": "source"
+            "mode": "preview"
           }
         }
       }
@@ -89,6 +89,14 @@
   "active": "9cbfd78c5307bb68",
   "lastOpenFiles": [
     "README.md",
-    "Untitled.md"
+    "Networks/Subnetting.md",
+    "Networks/Networks.md",
+    "Networks/Network-Topology.md",
+    "Networks/MAC-Address.md",
+    "Networks/IP-Address.md",
+    "Networks/Internet.md",
+    "Networks/ICMP.md",
+    "Networks/DHCP.md",
+    "Networks/OSI-Modell/OSI-Model.md"
   ]
 }
