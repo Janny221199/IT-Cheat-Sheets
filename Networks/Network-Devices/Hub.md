@@ -1,2 +1,3 @@
 # Hub
 TODO
+- Signal amplification

@@ -3,5 +3,6 @@
   "alwaysUpdateLinks": true,
   "useMarkdownLinks": true,
   "attachmentFolderPath": "./attachments",
-  "newFileLocation": "current"
+  "newFileLocation": "current",
+  "readableLineLength": false
 }

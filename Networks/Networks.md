@@ -5,7 +5,7 @@
 -   ensures a stable, secure and reliable connection between devices and applications
 -   many Networks could be connected to one giant network: [Internet](Internet.md)
 -   [OSI-Model](OSI-Modell/OSI-Model.md) (structure of networks)
--   devices must be both identifying and identifiable on a network
+-   devices must be both identifying and identifiable on a network:
 	-   [IP Address](IP-Address.md)
 	-   [MAC Address](MAC-Address.md)
 
@@ -15,3 +15,5 @@
 
 `ping [IP Address]`
 `ping [URL]`
+
+TODO images

@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "README.md",
+            "file": "Networks/OSI-Modell/2-Data-Link-Layer.md",
             "mode": "source"
           }
         }
@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "TODO",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -68,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "Networks/OSI-Modell/2-Data-Link-Layer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -88,15 +88,15 @@
   },
   "active": "9cbfd78c5307bb68",
   "lastOpenFiles": [
+    "Networks/OSI-Modell/2-Data-Link-Layer.md",
+    "Networks/Network-Devices/Router.md",
+    "Networks/Network-Devices/Switch.md",
+    "Networks/Network-Devices/Hub.md",
+    "Networks/OSI-Modell/OSI-Model.md",
+    "Networks/Networks.md",
+    "Networks/OSI-Modell/1-Physical-Layer.md",
     "README.md",
     "Server-Administration/Server-Administration.md",
-    "Cloud/Cloud.md",
-    "DevOps/DevOps.md",
-    "Operating-Systems/Operating-Systems.md",
-    "IT-Security/IT-Security.md",
-    "Algorithms/Algorithms.md",
-    "Data-Structures/Data-Structures.md",
-    "Databases/Databases.md",
-    "Software-Engineering/Software-Engineering.md"
+    "Cloud/Cloud.md"
   ]
 }

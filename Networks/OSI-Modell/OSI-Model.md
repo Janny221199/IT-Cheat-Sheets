@@ -9,6 +9,8 @@
 	- Layers are arranged vertically on top of each other regarding to the hardware proximity
 	- Each layer provides services to the next higher layer via an interface
 	- Each layer uses services of the next lower one
+	- technical implementation of lower layers know known for upper layers
+	- each layer is responsible for a sprecific tasks
 
 Layer | 
 --- | ---
@@ -20,6 +22,56 @@ Layer |
 [2-Data-Link-Layer](2-Data-Link-Layer.md) |
 [1-Physical-Layer](1-Physical-Layer.md) |
 
-TODO Encapsulation
+## Encapsulation
+- takes information of the layer above and adds information (e.g. Header) to it.
+- decapsulation is the process of receiving data and retrieving the data of the specific layer (removing the headers of lower layers)
 
-
+```
+         sender                                                                                receiver
+┌───────────────────────┐                                                              ┌───────────────────────┐
+│                       │                     Messages                                 │                       │
+│   Application  Layer  │                                        ┌────┐                │   Application  Layer  │
+│   Presentation Layer  ├────────────────────────────────────────┤Data├───────────────►│   Presentation Layer  │
+│   Session      Layer  │                                        └────┘                │   Session      Layer  │
+│                       │                     HTTP, SMTP, etc.                         │                       │
+└───────────┬───────────┘                                                              └───────────▲───────────┘
+            │                                                                                      │
+┌───────────▼───────────┐                                                              ┌───────────┴───────────┐
+│                       │                     Segments                                 │                       │
+│                       │                         ┌──────────────┬────┐                │                       │
+│   Transport Layer     ├─────────────────────────┤Segment Header│Data├───────────────►│   Transport Layer     │
+│                       │                         └──────────────┴────┘                │                       │
+│                       │                     TCP, UDP, etc.                           │                       │
+└───────────┬───────────┘                                                              └───────────▲───────────┘
+            │                                                                                      │
+┌───────────▼───────────┐                                                              ┌───────────┴───────────┐
+│                       │                     Packets                                  │                       │
+│                       │               ┌─────────┬──────────────┬────┐                │                       │
+│   Network Layer       ├───────────────┤IP Header│Segment Header│Data├───────────────►│   Network Layer       │
+│                       │               └─────────┴──────────────┴────┘                │                       │
+│                       │                     IP, etc.                                 │                       │
+└───────────┬───────────┘                                                              └───────────▲───────────┘
+            │                                                                                      │
+┌───────────▼───────────┐                                                              ┌───────────┴───────────┐
+│                       │                     Frames                                   │                       │
+│                       │  ┌────────────┬─────────┬──────────────┬────┬─────────────┐  │                       │
+│   Data Link Layer     ├──┤Frame Header│IP Header│Segment Header│Data│Frame Trailer├─►│   Data Link Layer     │
+│                       │  └────────────┴─────────┴──────────────┴────┴─────────────┘  │                       │
+│                       │                     Ethernet, WiFi, etc.                     │                       │
+└───────────┬───────────┘                                                              └───────────▲───────────┘
+            │                                                                                      │
+┌───────────▼───────────┐                                                              ┌───────────┴───────────┐
+│                       │                     Signale                                  │                       │
+│                       │  ┌────────────────────────────────────────────────────────┐  │                       │
+│   Pysical Layer       ├──┤01110000110100011110011001101101101010101010100110101011├─►│   Pysical Layer       │
+│                       │  └────────────────────────────────────────────────────────┘  │                       │
+│                       │                     DSL, Ethernet, etc.                      │                       │
+└───────────┬───────────┘                                                              └───────────▲───────────┘
+            │                                                                                      │
+            │                                                                                      │
+            │                                                                                      │
+            │                                                                                      │
+            └──────────────────────────────────────────────────────────────────────────────────────┘
+                                              physical medium
+                                              cables etc.
+```
