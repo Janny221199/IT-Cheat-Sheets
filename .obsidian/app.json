@@ -4,5 +4,7 @@
   "useMarkdownLinks": true,
   "attachmentFolderPath": "./attachments",
   "newFileLocation": "current",
-  "readableLineLength": false
+  "readableLineLength": false,
+  "legacyEditor": false,
+  "livePreview": true
 }
