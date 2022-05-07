@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Operating-Systems/Operating-Systems.md",
+            "file": "Cloud/Cloud.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Operating-Systems/Operating-Systems.md",
+                "file": "Cloud/Cloud.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,12 +89,12 @@
   },
   "active": "9cbfd78c5307bb68",
   "lastOpenFiles": [
+    "Cloud/Cloud.md",
     "Operating-Systems/Operating-Systems.md",
     "Operating-Systems/Package-Manager.md",
     "Computer-Science-Basics/Number-Systems.md",
     "Computer-Science-Basics/Data-Measurement.md",
     "Computer-Science-Basics/Computer-Science.md",
-    "Cloud/Cloud.md",
     "Networks/OSI-Modell/1-Physical-Layer.md",
     "Networks/OSI-Modell/2-Data-Link-Layer.md",
     "Networks/Network-Devices/Router.md",
