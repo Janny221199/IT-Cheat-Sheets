@@ -1,6 +1,6 @@
 # Cloud
-- Usage of (multiple) IT-Rescources over the internet
-- key advantages: flexible, scalable, availability, performance
+- Usage of (multiple) remote IT-Rescources over the internet
+- key advantages: flexible, scalable, availability, performance, global, reliable. secure
 - hardware managed and hosted by cloud provider like AWS, Azure and GCP
 
 There is a fundamental distinction between public, private and hybrid clouds. 
@@ -8,12 +8,15 @@ There is a fundamental distinction between public, private and hybrid clouds.
 ## Public clouds
 Public clouds are hosted on servers of external cloud providers. Here, the cloud can be set up and used quickly according to requirements.
 
-## Private cloud 
+## Private cloud (On-Premise)
 A private cloud is company-specific hardware that is operated by the company itself.
 In this case, good transparency regarding data protection and IT security can be guaranteed.
-
+ 
 ## Hybrid cloud
 The hybrid cloud is a combination of the public and private cloud, which hosts selected software on a company-internal infrastructure and other software at public cloud providers.
+
+## Cross cloud
+The usage of multiple / different cloud providers.
 
 
 ## Different Service models as abstraction layer for customers
