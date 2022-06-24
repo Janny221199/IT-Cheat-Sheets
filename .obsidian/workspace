@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Cloud/Global Infrastructure.md",
+            "file": "Networks/Protocol.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Cloud/Global Infrastructure.md",
+                "file": "Networks/Protocol.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,15 +89,15 @@
   },
   "active": "9cbfd78c5307bb68",
   "lastOpenFiles": [
-    "Cloud/Global Infrastructure.md",
+    "Networks/Protocol.md",
+    "Networks/OSI-Modell/OSI-Model.md",
+    "Networks/Network-Topology.md",
+    "Networks/Protocols.md",
     "Networks/ARP.md",
     "Networks/Network-Devices/Router.md",
     "Networks/Network-Devices/Repeater.md",
     "Networks/Network-Devices/Hub.md",
-    "Operating-Systems/Operating-Systems.md",
-    "Cloud/Cloud.md",
-    "Operating-Systems/Package-Manager.md",
-    "Computer-Science-Basics/Number-Systems.md",
-    "Computer-Science-Basics/Data-Measurement.md"
+    "Cloud/Global Infrastructure.md",
+    "Operating-Systems/Operating-Systems.md"
   ]
 }

@@ -11,6 +11,8 @@
 	- Each layer uses services of the next lower one
 	- technical implementation of lower layers know known for upper layers
 	- each layer is responsible for a sprecific tasks
+	- network devices can be related to a specific layer
+		- A device operates on level n exactly when it understands the [Protocol](../Protocol.md)s up to level n.
 
 Layer | 
 --- | ---
@@ -23,7 +25,8 @@ Layer |
 [1-Physical-Layer](1-Physical-Layer.md) |
 
 ## Encapsulation
-- takes information of the layer above and adds information (e.g. Header) to it.
+- takes information of the layer above and adds information (e.g. Header) to it
+- Characteristic for the layer model is the packaging of one data unit of level n into a data unit of level n - 1 when sending.
 - decapsulation is the process of receiving data and retrieving the data of the specific layer (removing the headers of lower layers)
 
 ```
