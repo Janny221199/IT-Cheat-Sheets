@@ -6,6 +6,9 @@
 -  calculated through a technique known as IP addressing & [Subnetting](Subnetting.md)
 -  cannot be more than once within the **same** network
 -  public and private IP Address
+- most important protcol for the [3-Network-Layer](OSI-Modell/3-Network-Layer.md)
+- hierarchical
+- contains a netword id and host id seperated with a network mask / subnet mask
 
 ## IPv4
 - **192.168.2.117**
@@ -14,6 +17,7 @@
 - 32 Bits (4\*8 Bits) -> 4 \* numbers between 0 and 255
 - 2^32 -> 4.29 billion IPv4 addresses (problem)
 - separating networks in a [Classful Design](IP-Address.md#Classful)
+- after the network part (netmask [Subnetting](Subnetting.md)) all bits to 0 (network address) and all bits to 1 (broadcast address) are reservered adresses
 
 
 ## IPv6
@@ -36,3 +40,8 @@ TODO link to subnetting
 TODO 192 or 127 missing for private or callback??
 TODO A and B only a few networks but a lot of hosts
 TODO C a lot of networks but not so much hosts
+
+
+
+
+

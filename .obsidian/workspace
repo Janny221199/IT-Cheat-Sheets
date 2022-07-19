@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Networks/Protocol.md",
+            "file": "Networks/IP-Address.md",
             "mode": "source",
             "source": false
           }
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "TODO",
+                "query": "bina",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Networks/Protocol.md",
+                "file": "Networks/IP-Address.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,15 +89,15 @@
   },
   "active": "9cbfd78c5307bb68",
   "lastOpenFiles": [
+    "Networks/IP-Address.md",
+    "Networks/MAC-Address.md",
+    "Networks/ICMP.md",
+    "Networks/Subnetting.md",
     "Networks/Protocol.md",
-    "Networks/OSI-Modell/OSI-Model.md",
-    "Networks/Network-Topology.md",
-    "Networks/Protocols.md",
-    "Networks/ARP.md",
+    "Networks/OSI-Modell/3-Network-Layer.md",
+    "Cloud/Cloud.md",
     "Networks/Network-Devices/Router.md",
-    "Networks/Network-Devices/Repeater.md",
-    "Networks/Network-Devices/Hub.md",
-    "Cloud/Global Infrastructure.md",
-    "Operating-Systems/Operating-Systems.md"
+    "Hardware/Network-Interface-Card.md",
+    "Networks/OSI-Modell/OSI-Model.md"
   ]
 }
