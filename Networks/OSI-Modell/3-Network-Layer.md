@@ -12,6 +12,9 @@ Forwarding refers to the router-local action of transferring packet from an inp
 Routing refers to the network-wide process that determines the end-to-end paths that packets take from source to destination.
 
 ## Packets
+
+### IPv4 Header
+
 ```
  0               8               16              24              31 = 32Bits = 4Bytes
  │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │
@@ -45,7 +48,44 @@ Routing refers to the network-wide process that determines the end-to-end paths 
 - Identification, Flags and Offset:  allow fragmentation (TODO) of a packet by a router
 - TTL Time to Live: amout of routers a package could be routed through (hop limit)
 - Protocol: uesed Protocol in [4-Transport-Layer](4-Transport-Layer.md) (e.g. TCP / UDP)
-- Header Checksum: calculated checksum of only IP-Header for error checking. Every Router is calculating the checksum and compares it to the checksum flied to check if the the packet is correct. if the values do not match, the router discards the packet.
+- Header Checksum: calculated checksum of only IP-Header for error checking. Every Router is calculating the checksum and compares it to the checksum flied to check if the the packet is correct. if the values do not match, the router discards the packet
 - Source and Destination Address: [IP-Address](../IP-Address.md)es of source and destination 
 - Options: not often used
 - Data: Payload
+
+### IPv6 Header
+```
+0               8               16              24              31 = 32Bits = 4Bytes
+│ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │ │
+└─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘
+
+┌───────┬───────────────┬───────────────────────────────────────┐
+│Version│Traffic Class  │Flow Label                             │ 4Bytes
+├───────┴───────────────┴───────┬───────────────┬───────────────┤
+│Payload Length                 │Next Header    │Hop Limit      │ 4Bytes
+├───────────────────────────────┴───────────────┴───────────────┤
+│                                                               │
+│                                                               │
+│                                                               │
+│Source Address                                                 │16Bytes
+│                                                               │
+│                                                               │
+│                                                               │
+├───────────────────────────────────────────────────────────────┤
+│                                                               │
+│                                                               │
+│                                                               │
+│Destination Address                                            │16Bytes
+│                                                               │
+│                                                               │
+│                                                               │
+└───────────────────────────────────────────────────────────────┘
+```
+
+- Version: always 6 (bit sequence 0110) [Base 2 Binary](../../Computer-Science-Basics/Number-Systems.md#Base%202%20Binary)]
+- Traffic Class : allow the classification of packets according to allowed delay etc. (see Multimedia)
+- FLow Label: TODO
+- Payload Lenth: The size of the payload in octets, including any extension headers
+- Next Header: type of next header. e.g. [4-Transport-Layer](4-Transport-Layer.md) Protocol
+-  Hop limit: see TTL in [IPv4 Header](3-Network-Layer.md#IPv4%20Header)
+- Source and Destination Address: [IP-Address](../IP-Address.md)es of source and destination 

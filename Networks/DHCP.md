@@ -38,3 +38,7 @@ DHCP Discover | Device checks if any DHCP servers are on the network
 DHCP Offer | DHCP server replies with an IP address the device could use
 DHCP Request | Device replies and confirms that it will use this address for the IP Address
 DHCP Ack | DHCP server replies with an acknowledgment that the device can start using the IP Address
+
+- Client could choose between multipe Servers
+- communication with DHCP uses [UDP](OSI-Modell/4-Transport-Layer.md#UDP)
+- DHCPv6 for [IPv6](IP-Address.md#IPv6)

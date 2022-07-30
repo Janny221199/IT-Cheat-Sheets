@@ -8,3 +8,6 @@
 3. the device which MAC Address matches the requested IP Address 
 4. requested device sends an ARP-Reply as acknowledgement
 5. other device will now store an ARP-Entry 
+
+- ARP Cache saves the results for furture requests
+- ND **N**eighbor **D**iscovery Protocol for [IPv6](IP-Address.md#IPv6) 

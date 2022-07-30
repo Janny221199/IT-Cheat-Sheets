@@ -1,7 +1,10 @@
 # Subnetting
+- related to CIDR **C**lassless **I**nter-**D**omain **R**outing (oppiste of [Classful addressing](IP-Address.md#Classful%20addressing))
+
 ## Netmask
 - divides [IP-Address](IP-Address.md)es into subnets and specifies the network's available hosts
 - `<ip-address> = <network><subnetwork><host>`
+- subnets are not visible outside the network
 - netmask could be specified in 2 notations:
 	- integer (Postfix): counted from left how many bits are part of the network part `<ip>/<postfix>`
 		- /24
