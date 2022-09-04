@@ -15,13 +15,89 @@
 ## TCP
 - **T**ransmission **C**ontrol **P**rotocol
 - reliable established connection (connection oriented)
-- connection should be closed once transmission is complete
+- connection should be closed once transmission is complete ([TCP Three-way Hanyshake](4-Transport-Layer.md#TCP%20Three-way%20Hanyshake) and [TCP Teardown](4-Transport-Layer.md#TCP%20Teardown))
 - Able to sequence
 - Can guarantee delivery of data to the destination
 - Retransmission of lost packets
 - Extensive error checking and acknowledgment of data
 -  Does not support Broadcasting
 - optimal usage: HTTP(s), SMTP, FTP etc.
+
+### TCP Three-way Hanyshake
+```
+Client                                        Server
+   │                                             │
+   ├────────┐                                    │
+   │        └────────┐SYN(seq=x)                 │
+   │                 └────────┐                  │
+   │                          └────────┐         │
+   │                                   └────────►│
+   │                                             │
+   │                                             │
+   │                                             │
+   │           SYN(seq=y)+ACK(ack=x+1)  ┌────────┤
+   │                           ┌────────┘        │
+   │                  ┌────────┘                 │
+   │         ┌────────┘                          │
+   │◄────────┘                                   │
+   │                                             │
+   │                                             │
+   │                                             │
+   ├────────┐                                    │
+   │        └────────┐ACK(ack=y+1)               │
+   │                 └────────┐                  │
+   │                          └────────┐         │
+   │                                   └────────►│
+   │                                             │
+```
+1. the clients wants to establish a connection with the server and sends a segment with SYN Flag (**Sy**nchronize Sequence **N**umber) which informs the server that the client is likely to start communication and with what sequence number its starts segments with
+2. Server responds to client with SYN+ACK. 
+   - ACK (**Ack**nowledgement) Number contains the number of the next expected byte and confirms the receipt of previous client segment (x)
+   -  SYN Flagwith what sequence number its starts segments with
+3. ACK confirms the receipt of previous server segment and contains the number of tzhe next expected bytes
+
+### TCP Teardown
+```
+Client                                        Server
+   │                                             │
+   ├────────┐     FIN(1)+SEQ(m)                  │
+   │        └────────┐                           │
+   │                 └────────┐                  │
+   │                          └────────┐         │
+   │                                   └────────►│
+   │                                             │
+   │                                             │
+   │                                             │
+   │                                    ┌────────┤
+   │                  ACK(m+1) ┌────────┘        │
+   │                  ┌────────┘                 │
+   │         ┌────────┘                 ┌────────┤
+   │◄────────┘   FIN(1)+SEQ(n) ┌────────┘        │
+   │                  ┌────────┘                 │
+   │         ┌────────┘                          │
+   │◄────────┘                                   │
+   │                                             │
+   │                                             │
+   ├────────┐                                    │
+   │        └────────┐ACK(n+1)                   │
+   │                 └────────┐                  │
+   │                          └────────┐         │
+   │                                   └────────►│
+   │                                             │
+```
+The grateful connection relaese (without abruption) uses TCP Header FIN Flag
+1. Suppose that the client application decides it wants to close the connection. (Note that the server could also choose to close the connection), the client sends a TCP segment with FIN bit set to 1 to the server. it will accept no more data
+2. server acknowledges the FIN
+3. server sens his own FIN (a little bit later because the server closing process)
+4. client can confirm the FIN of the server
+
+### TCP Flow control
+- uses field window size
+- sender sends data 
+- receiver saves data in buffer
+- receiver sends ACK acknowledgment with number of next expected bit and WIN window size with the amount buffer capacity
+- client sends next data with sequence number (but if server buffer is full (WIN=0), the sender is blocked until server sends new segment with a window size > 0)
+![](attachments/flow_control_with_window_size.png)
 
 ## UDP
 - **U**ser **D**atagram **P**rotocol
@@ -51,6 +127,50 @@
 ## Sockets
 - associated with [Ports](4-Transport-Layer.md#Ports)
 - interface to send and receive data on a particular port
+
+### Socket API
+|Methode|Description|
+|-------|-----------|
+|Socket |Create new communication endpoint|
+|Bind   |Attach local adsress to a socket|
+|Listen |Announce willingness to accept connections|
+|Accept |Accept a connection attempt|
+|Connect|Actively attempt to establish a connection|
+|Send   |Send data over the connection|
+|Receive|Receive data from the connection|
+|Close  |Release the connection|
+
+### Socket Flow
+```
+┌─────────┐                         ┌─────────┐
+│socket() │                         │socket() │
+└────┬────┘                         └────┬────┘
+     │                                   │
+┌────▼────┐                              │
+│bind()   │                              │
+└────┬────┘                              │
+     │                                   │
+┌────▼────┐                              │
+│listen() │                              │
+└────┬────┘                              │
+     │         Connection Setup          │
+┌────▼────┐    (3-way handshake)    ┌────▼────┐
+│accept() │◄───────────────────────►│connect()│
+└────┬────┘                         └────┬────┘
+     │                                   │
+┌────▼────┐                         ┌────▼────┐
+│receive()◄───┐                 ┌───►send()   │
+└────┬────┘   │                 │   └────┬────┘
+     │        │                 │        │
+┌────▼────┐   │                 │   ┌────▼────┐
+│send()   ├───┘                 └───┤receive()│
+└────┬────┘                         └────┬────┘
+     │       Connection Termination      │
+┌────▼────┐        (Teardown)       ┌────▼────┐
+│close()  │◄───────────────────────►│close()  │
+└─────────┘                         └─────────┘
+```
+
 
 ## TCP Segment
 ```
@@ -96,3 +216,5 @@
 - Urgent Pointer: If the URG flag is set, then this 16-bit field is an offset from the sequence number indicating the last urgent data byte
 - Options: not often used
 - Data: Payload
+
+
