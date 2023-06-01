@@ -115,7 +115,7 @@ The grateful connection relaese (without abruption) uses TCP Header FIN Flag
 - Identification of applications
 - numeric value assigned to a specific process or application in the device
 - `<ip/domain>:PORT` e.g. 127.0.0.1:8080
-- a lot of port numbers are reserved for specific protocols / applications TODO
+- a lot of port numbers are reserved for specific protocols / applications (e.g. 21 FTP, 22 SSH, 80 HTTP, 443 HTTPS)
 - valid port numbers: 0 - 65535 (= 2^16-1)
 	- well-known ports 0 - 1023
 		- reserverd for system and network services 
