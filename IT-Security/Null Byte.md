@@ -1,0 +1,4 @@
+- null bytes is an injection technique where URL-encoded representation such as `%00` or `0x00` in hex with user-supplied data to terminate strings
+- trick the web app into disregarding whatever comes after the Null Byte
+- this could be used when an app appends an string or file extension to an input value, which we wanna skip
+- **the null byte trick is fixed and not working with `PHP 5.3.4` and above**

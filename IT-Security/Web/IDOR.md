@@ -1,0 +1,7 @@
+- Insecure Direct Object Reference
+- type of access control vulnerability
+- arises when an application uses user-supplied input to access objects directly with too much trust in the input data without validating if the requested data belongs to the user data
+- used in post data, query strings, cookies and so on
+- data could be encoded / hashed (so must be decoded, changed and encoded again to request other objects)
+- best way to check it with 2 accounts
+- have a look at the Web Browser Developer Network Tab, find possible Request, edit values and request again
