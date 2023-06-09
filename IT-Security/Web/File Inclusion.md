@@ -243,7 +243,7 @@ Example:
 
 
 
-# How to prevent File Inclusions
+# Remediation: How to prevent File Inclusions
 1. keep system, services, web application frameworks and everthiy up to date
 2. turn off PHP errors to avoid leaking the path of the application and other potentially revealing information.
 3. use a Web Application Firewall (WAF)

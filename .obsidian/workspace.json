@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "6566880c635e2b6a",
+        "id": "10cf1b041e4ddba8",
         "type": "tabs",
         "children": [
           {
-            "id": "4f71ddf0c2b9d956",
+            "id": "5d2a855594f39609",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "IT-Security/Web/Server-Side Request Forgery SSRF.md",
+                "file": "IT-Security/Web/SQL Injection.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,13 +48,21 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "Prevent",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               }
+            }
+          },
+          {
+            "id": "1c69e8562e5f22d0",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
             }
           }
         ]
@@ -77,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "IT-Security/Web/Server-Side Request Forgery SSRF.md",
+                "file": "IT-Security/Web/SQL Injection.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,11 +112,32 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "4f71ddf0c2b9d956",
+  "active": "5d2a855594f39609",
   "lastOpenFiles": [
-    "IT-Security/Web/OWASP.md",
-    "IT-Security/Web/File Inclusion.md",
+    "IT-Security/Web/Remote Code Execution RCE - Command Injection.md",
     "IT-Security/Web/Server-Side Request Forgery SSRF.md",
+    "IT-Security/Web/File Inclusion.md",
+    "IT-Security/Web/SQL Injection.md",
+    "Databases/Relational SQL.md",
+    "Databases/Databases.md",
+    "Databases/Non-Relational NoSQL.md",
+    "IT-Security/Web/Cross-Site Scripting XSS.md",
+    "IT-Security/Digital Forensics/PDF.md",
+    "IT-Security/CIA Triad.md",
+    "Operating-Systems/Windows/Windows Firewall.md",
+    "Operating-Systems/Windows/Account Types.md",
+    "Software-Engineering/Web/Document Object Model DOM.md",
+    "Software-Engineering/Web/attachments/Pasted image 20230606220622.png",
+    "Software-Engineering/Web/attachments",
+    "Software-Engineering/Web",
+    "IT-Security/Digital Forensics/Images JPEG, PNG ....md",
+    "IT-Security/Digital Forensics",
+    "Operating-Systems/Windows/Windows Folders.md",
+    "Operating-Systems/Windows/Windows File System NFTS.md",
+    "Operating-Systems/Package-Manager.md",
+    "Operating-Systems/Windows",
+    "Operating-Systems/Operating-Systems.md",
+    "IT-Security/Web/OWASP.md",
     "IT-Security/Web/IDOR.md",
     "IT-Security/Web/Get HTTP Headers.md",
     "IT-Security/Web/Subdomain Enumeration.md",
@@ -116,22 +145,6 @@
     "Server-Administration/Server-Administration.md",
     "Networks/HTTP.md",
     "Networks/DNS.md",
-    "IT-Security/Web/Cross-Site Scripting XSS.md",
-    "IT-Security/Web/Denial of Service DoS.md",
-    "IT-Security/Null Byte.md",
-    "IT-Security/Vulnerable OS Files.md",
-    "IT-Security/Rules of Engagement.md",
-    "README.md",
-    "IT-Security/Web/OSINT.md",
-    "IT-Security/Kali Ressources and Files.md",
-    "IT-Security/Crack Hashes.md",
-    "IT-Security/Remote Code Execution.md",
-    "Networks/URL.md",
-    "Networks/FTP.md",
-    "Networks/TLS.md",
-    "Networks/OSI-Modell/4-Transport-Layer.md",
-    "IT-Security/Web/Authetication Bypass.md",
-    "Networks/Internet.md",
     "IT-Security/Web/attachments/Pasted image 20230602000640.png",
     "IT-Security/Web/attachments",
     "IT-Security/Web/Untitled",

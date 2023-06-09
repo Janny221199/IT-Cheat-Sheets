@@ -1,0 +1,17 @@
+- New Technology File System NFTS in modern versions of windows
+- before there was FAT16/FAT32 (File Allocation Table) and HPFS (High Performance File System)
+- FAT partitions still in use today ( USB Drives, MicroSD cards etc.)
+- NTFS is known as a journaling file system. In case of a failure, the file system can automatically repair the folders/files on disk using information stored in a log file. This function is not possible with FAT.
+- NTFS addresses many of the limitations of the previous file systems:
+	-  Supports files larger than 4GB
+	-   Set specific permissions on folders and files
+	-   Folder and file compression
+	-   Encryption (Encryption File System or EFS)
+- typically windows is running on the file system `C:\`
+- on NFTS volumes you can set the following permissions that grant or deny access to files and foldes:
+	-   Full control
+	-   Modify
+	-   Read & Execute
+	-   List folder contents
+	-   Read
+	-   Write

@@ -47,7 +47,7 @@ in the HTML Forms some forms and inputs allow to enter a full / partial URL as v
 e.g. to select a avatar or sth like that where the path of the avatar is provided and loaded -> here we could enter a different value
 
 
-# How to prevent SSRF
+# Remediation: How to prevent SSRF
 1. Allow List 
 2. Deny List
 3. validating user input
