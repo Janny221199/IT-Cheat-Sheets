@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "IT-Security/Web/SQL Injection.md",
+                "file": "Cloud/Kubernetes.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Prevent",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 326.5
   },
   "right": {
     "id": "f0b55728a4fa4db9",
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "IT-Security/Web/SQL Injection.md",
+                "file": "Cloud/Kubernetes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,8 +95,17 @@
                 "unlinkedCollapsed": true
               }
             }
+          },
+          {
+            "id": "89539389bedf9106",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -109,19 +118,30 @@
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "command-palette:Open command palette": false,
-      "markdown-importer:Open format converter": false
+      "markdown-importer:Open format converter": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "5d2a855594f39609",
+  "active": "89539389bedf9106",
   "lastOpenFiles": [
-    "IT-Security/Web/Remote Code Execution RCE - Command Injection.md",
-    "IT-Security/Web/Server-Side Request Forgery SSRF.md",
-    "IT-Security/Web/File Inclusion.md",
+    "IT-Security/Web/Cross-Site Scripting XSS.md",
+    "IT-Security/Web/Burp Suite.md",
+    "IT-Security/Web/attachments/Pasted image 20230612031425.png",
     "IT-Security/Web/SQL Injection.md",
+    "IT-Security/Web/Server-Side Request Forgery SSRF.md",
+    "IT-Security/Web/attachments/Pasted image 20230610053012.png",
+    "IT-Security/Web/attachments/Pasted image 20230610052833.png",
+    "IT-Security/Web/attachments/Pasted image 20230610045708.png",
+    "IT-Security/Web/attachments/Pasted image 20230610045236.png",
+    "Cloud/Kubernetes.md",
+    "Cloud/attachments/Pasted image 20230609191257.png",
+    "Cloud/attachments/Pasted image 20230609191255.png",
+    "Cloud/attachments",
+    "IT-Security/Web/Remote Code Execution RCE - Command Injection.md",
+    "IT-Security/Web/File Inclusion.md",
     "Databases/Relational SQL.md",
     "Databases/Databases.md",
     "Databases/Non-Relational NoSQL.md",
-    "IT-Security/Web/Cross-Site Scripting XSS.md",
     "IT-Security/Digital Forensics/PDF.md",
     "IT-Security/CIA Triad.md",
     "Operating-Systems/Windows/Windows Firewall.md",
@@ -142,9 +162,6 @@
     "IT-Security/Web/Get HTTP Headers.md",
     "IT-Security/Web/Subdomain Enumeration.md",
     "Server-Administration/Web Server.md",
-    "Server-Administration/Server-Administration.md",
-    "Networks/HTTP.md",
-    "Networks/DNS.md",
     "IT-Security/Web/attachments/Pasted image 20230602000640.png",
     "IT-Security/Web/attachments",
     "IT-Security/Web/Untitled",

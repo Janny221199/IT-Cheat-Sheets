@@ -3,6 +3,7 @@
 - web application communicates with a database using input from a user that hasn't been properly 
 - when user-provided data gets included in the SQL query
 - attacker can steal, alter, delete or modify data directly and gain access to every ressource and maybe also authentication data
+- a good tool is the [Burp Suite](Burp%20Suite.md) Repeater to test multiple inputs
 
 # Example
 URL (or also Input field possible): `http://URL/blog?id=1`
