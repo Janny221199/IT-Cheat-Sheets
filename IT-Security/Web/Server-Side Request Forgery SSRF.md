@@ -1,6 +1,8 @@
 allows a malicious user to cause the webserver to make an additional or edited HTTP request to the resource of the attacker's choosing
 
-a lot of trial and error will be required to find a working payload
+a lot of trial and error will be required to find a working 
+
+often arise from implementations where our web application needs to use third-party services. when the url parameter contains an url or external server
 
 If working with a blind SSRF where no output is reflected back to you, you'll need to use an external HTTP logging tool to monitor requests such as https://requestbin.com, your own HTTP server or Burp Suite's Collaborator client.
 
@@ -26,7 +28,7 @@ where only the url path can be provided
 **Hacker Request:**
 `http://my-shop.de/stock?url=/../user` to get user data
 
-## concattenated URL
+## concatenated URL
 some web apps let us provide a subdomain which is then concattenated with the second-level domain and TLD.
 we could by pass that with `&x=` to interrupt the rest 
 **Expected Request:**
@@ -35,7 +37,7 @@ we could by pass that with `&x=` to interrupt the rest
 `http://my-shop.de/stock?server=api.my-shop.de/api/user&x=&id=123` to get user data
 
 
-# Finding a SSRF vulnurability
+# Finding a SSRF vulnerability
 ## full URL in Parameter
 `http://my-shop.de/stock?url=http://api.my-shop.de/api/stock/item?id=123`
 ## partial URL in Parameter e.g. Hostname

@@ -1,6 +1,7 @@
-TODO
+
 - stores information in tables
 - often the tables have shared information between them
+- great for related data
 
 # Tables
 tables will often contain a column that has a unique ID (primary key) which will then be used in other tables to reference it and cause a relationship between the tables

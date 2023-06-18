@@ -1,1 +1,5 @@
-TODO
+- Not-only-SQL
+- many types (Document, columns-based, key / value)
+- flexible (schema-less)
+- great scalability
+- not s well suited for complex queries
