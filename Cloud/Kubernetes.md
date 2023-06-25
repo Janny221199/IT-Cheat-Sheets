@@ -131,3 +131,11 @@
 
 
 ![](attachments/Pasted%20image%2020230609191255.png)
+
+
+# Useful Commands
+
+## Delete all Failed Pods
+```cmd
+kubectl delete pods --field-selector status.phase=Failed -n <your-namespace>
+```

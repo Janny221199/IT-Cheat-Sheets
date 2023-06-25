@@ -1,0 +1,7 @@
+- CVEs (Common Vulnerabilities and Exposures)
+- CVE-YEAR-IDNUMBER
+- goto https://www.exploit-db.com/ or any other sites like https://nvd.nist.gov/vuln/search or https://cve.mitre.org/
+- in kali linux you can use `searchsploit`  to search offline for exploits in https://www.exploit-db.com/ e.g.: `searchsploit fuel cms`
+- find vulnerabilities for the specific app (wordpress) (for the specific version)
+- read description and download exploit
+- run exploit

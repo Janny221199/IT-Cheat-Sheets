@@ -165,6 +165,7 @@ Cross-Axis from left to right
 
 
 ## Aligning Flex Items in Cross Axis
+- aligning items on **cross axis**
 
 ### center (default)
 ```css
@@ -179,6 +180,7 @@ Cross-Axis from left to right
 ![](attachments/Pasted%20image%2020230618055652.png)
 
 ## Justify Flex Items
+- aligning items on the **main axis**
 
 ### start (default)
 ```css

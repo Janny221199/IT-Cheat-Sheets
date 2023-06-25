@@ -12,7 +12,7 @@ based on 2021:
 3. Injection -> [SQL Injection](SQL%20Injection.md) [Remote Code Execution RCE - Command Injection](Remote%20Code%20Execution%20RCE%20-%20Command%20Injection.md)
 4. Insecure Design -> [Logic Flaws](Authetication%20Bypass.md#Logic%20Flaws)
 5. Security Misconfiguration -> Poorly configured permission, having debugging or error message es displayed in production
-6. Vulnerable and Outdated Components -> [Find exploits for vulnerable and outdated (web) apps](../Find%20exploits%20for%20vulnerable%20and%20outdated%20(web)%20apps.md)
+6. Vulnerable and Outdated Components -> [CVEs](../CVEs.md)
 7. Identification and Authentication Failures -> [Logic Flaws](Authetication%20Bypass.md#Logic%20Flaws)
 8. Software and Data Integrity Failures -> [Subresource Integrity SRI](Subresource%20Integrity%20SRI.md)
 9. Security Logging & Monitoring Failures -> [Save Logs](../Digital%20Forensics/Save%20Logs.md)

@@ -65,7 +65,7 @@ p {
 View:
 ![](attachments/Pasted%20image%2020230618060831.png)
 
-# Move Elements Down in the Document Flow (Relative)
+# Relative
 - normal elements follow document flow strictly
 - can be changed with position
 - default is `position: static;`
@@ -121,7 +121,7 @@ or
 
 ![](attachments/Pasted%20image%2020230618061557.png)
 
-# Move Elements with absolute
+# Absolute
 - removed from document flow (as it would not be existing)
 ```css
 #two {
@@ -145,7 +145,7 @@ or
 ![](attachments/Pasted%20image%2020230618062559.png)
 
 ## Scrolling with absolute
-- it is moved out of a page if we scroll because its is "sticky"
+- it is moved out of a page if we scroll because its is not "sticky" / fixed
 ```css
 #two {
   background-color: #c95bc7;
@@ -156,8 +156,8 @@ or
 
 ![](attachments/Pasted%20image%2020230618063049.png)
 
-# Move Elements with fixed
-- as well as with absolute [Move Elements with absolute](Positioning%20Elements.md#Move%20Elements%20with%20absolute) it is out of the document flow, but it fixed on the screen if we scroll. so it gets not "scrolled out of the screen"
+# Fixed
+- as well as with absolute [Absolute](Positioning%20Elements.md#Absolute) it is out of the document flow, but it fixed on the screen if we scroll. so it gets not "scrolled out of the screen"
 ```css
 #two {
   background-color: #c95bc7;
