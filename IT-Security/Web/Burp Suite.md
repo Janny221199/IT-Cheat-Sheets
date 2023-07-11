@@ -32,7 +32,8 @@ e.g. in FireFox we can use FoxyProxy:
 
 ## allow HTTPS
 we need to got to http://burp/cert with proxy enabled, download the `cacert.der` and import it to our browsers certifications
-
+https://portswigger.net/burp/documentation/desktop/external-browser-config/certificate/ca-cert-chrome-macos
+IOS: https://portswigger.net/burp/documentation/desktop/mobile/config-ios-device
 
 ## use Proxy
 

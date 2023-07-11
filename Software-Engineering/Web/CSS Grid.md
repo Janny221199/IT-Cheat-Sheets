@@ -113,6 +113,18 @@ ul {
 ![](attachments/Pasted%20image%2020230619050339.png)
 
 
+## Dynamically calculated by browser
+- as many as possible with a minimum of 15rem and all the same column width
+
+```css
+ul {
+  ...
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  ...
+}
+```
+
 # Targeting a nth item of the grid
 
 ## Targeting the first item
