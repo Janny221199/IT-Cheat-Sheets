@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Software-Engineering/Web/React/Redux.md",
+                "file": "Cloud/SAAS Stack.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Software-Engineering/Web/React/Redux.md",
+                "file": "Cloud/SAAS Stack.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,16 +136,17 @@
   },
   "active": "6e0818ef819cf6cc",
   "lastOpenFiles": [
-    "Software-Engineering/Web/React/useContext.md",
-    "Software-Engineering/Web/React/Redux.md",
-    "Software-Engineering/Web/React/HTTP Requests.md",
+    "Software-Engineering/Web/Main CSS.md",
+    "Software-Engineering/Web/CSS Flexbox.md",
+    "Software-Engineering/Web/React/useReducer.md",
     "Software-Engineering/Web/React/useCallback.md",
+    "Software-Engineering/Web/React/Redux.md",
+    "Software-Engineering/Web/React/useContext.md",
+    "Software-Engineering/Web/React/HTTP Requests.md",
     "Software-Engineering/Web/React/useMemo.md",
     "Software-Engineering/Web/React/useEffect.md",
-    "Software-Engineering/Web/React/useReducer.md",
     "Software-Engineering/Web/React/useState.md",
     "Software-Engineering/Web/React/useRef.md",
-    "Software-Engineering/Web/Main CSS.md",
     "Software-Engineering/Web/React",
     "Software-Engineering/Web/CSS Grid.md",
     "Cloud/SAAS Stack.md",
@@ -162,7 +163,6 @@
     "Networks/OSI-Modell/6-Presentation-Layer.md",
     "Networks/OSI-Modell/7-Application-Layer.md",
     "Software-Engineering/VIM.md",
-    "IT-Security/Web/Transform and Transition.md",
     "Software-Engineering/Web/attachments/Pasted image 20230619051427.png",
     "Software-Engineering/Web/attachments/Pasted image 20230619051344.png",
     "Software-Engineering/Web/attachments/Pasted image 20230619050920.png",

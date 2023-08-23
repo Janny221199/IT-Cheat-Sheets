@@ -2,36 +2,84 @@
 
 ```css
 * {
-	box-sizing: border-box;
+
+box-sizing: border-box;
+
 }
+
+  
 
 html {
-	font-family: sans-serif;
+
+font-family: sans-serif;
+
 }
+
+  
 
 body {
-	margin: 0;
+
+margin: 0;
+
 }
 
-button, input, select, a {
-	font: inherit;
-}
+  
 
-button {
-	cursor: pointer;
-}
+button,
+
+input,
+
+textarea,
+
+select,
 
 a {
-	text-decoration: none;
+
+font: inherit;
+
+color: inherit;
+
 }
 
-ul, ol {
-	list-style: none;
+  
+
+button {
+
+cursor: pointer;
+
 }
 
-ul, ol, li {
-	margin: 0;
-	padding: 0;
+  
+
+a {
+
+text-decoration: none;
+
 }
+
+  
+
+ul,
+
+ol {
+
+list-style: none;
+
+}
+
+  
+
+ul,
+
+ol,
+
+li {
+
+margin: 0;
+
+padding: 0;
+
+}
+
 ```
 

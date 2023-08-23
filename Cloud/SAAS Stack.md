@@ -33,13 +33,15 @@ gcloud container --project "salespects" clusters create-auto "autopilot-cluster-
 
 # DNS and IPs
 
-1. create static IPs: each api gateway and production for staging and production
+1. create static IPs: each for staging and production
 names are important because they are referenced within the kubernetes manifests
 ```cmd
-gcloud compute addresses create api-gateway-static-ip-staging --project=salespects2 --global  
-gcloud compute addresses create frontend-static-ip-staging --project=salespects2 --global  
-gcloud compute addresses create api-gateway-static-ip-production --project=salespects2 --global
-gcloud compute addresses create frontend-static-ip-production --project=salespects2 --global
+gcloud compute addresses create gateway-static-ip-staging --project=salespects --global  
+gcloud compute addresses create frontend-static-ip-staging --project=salespects --global  
+gcloud compute addresses create website-static-ip-staging --project=salespects --global  
+gcloud compute addresses create gateway-static-ip-production --project=salespects --global
+gcloud compute addresses create frontend-static-ip-production --project=salespects --global
+gcloud compute addresses create website-static-ip-production --project=salespects --global
 ```
 
 2. Add IPs in DNS (TODO: CLI cmd)
@@ -194,6 +196,14 @@ helm install sealed-secrets -n kube-system sealed-secrets/sealed-secrets
 ```
 
 
+# MongoDB
+- enable network access and database access
+## Database access
+- set database access with username and password and provide it in backend configuration
+
+## Network access
+- for local / staging: allow all IPs `0.0.0.0/0`
+- for production: TODO: enable Peering or Private Endpoint
 
 # Deploy Services
 - deploy in that order and wait for some services. e.g. wait until discovery, config, zipkin and rabbitmq are up and running
@@ -216,6 +226,7 @@ kubectl apply -f Services/apps/user-application-staging.yml
 kubectl apply -f Salespects/apps/salespects-application-staging.yml
 kubectl apply -f Services/apps/gateway-application-staging.yml
 kubectl apply -f Salespects/apps/frontend-application-staging.yml
+kubectl apply -f Salespects/apps/website-application-staging.yml
 ```
 
 ### Manuell Kustomize
@@ -235,6 +246,7 @@ kubectl apply -k Services/manifests/user-manifests/overlays/staging
 kubectl apply -k Salespects/manifests/salespects-manifests/overlays/staging
 kubectl apply -k Services/manifests/gateway-manifests/overlays/staging
 kubectl apply -k Salespects/manifests/frontend-manifests/overlays/staging
+kubectl apply -k Salespects/manifests/website-manifests/overlays/staging
 ```
 
 
@@ -256,6 +268,7 @@ kubectl apply -f Services/apps/user-application-production.yml
 kubectl apply -f Salespects/apps/salespects-application-production.yml
 kubectl apply -f Services/apps/gateway-application-production.yml
 kubectl apply -f Salespects/apps/frontend-application-production.yml
+kubectl apply -f Salespects/apps/website-application-production.yml
 ```
 
 
@@ -276,4 +289,47 @@ kubectl apply -k Services/manifests/user-manifests/overlays/production
 kubectl apply -k Salespects/manifests/salespects-manifests/overlays/production
 kubectl apply -k Services/manifests/gateway-manifests/overlays/production
 kubectl apply -k Salespects/manifests/frontend-manifests/overlays/production
+kubectl apply -k Salespects/manifests/website-manifests/overlays/production
+```
+
+
+
+# Configure
+## Create Prices
+1. Create ProductGroup
+2. Create Product(s)
+3. Create monthly / yearly Price(s)
+4. provide Product Group as frontend env
+
+## set MongoDB search indexes
+
+- e.g.: salespects contact search:
+1. within "Browse Collections" click on "Search"  
+2. click "Create Index"  
+3. select "Json Editor"  
+4. select collection "salespects.contacts"  
+5. specify index name "contacts-index" (as specified in config mongo.collections.contacts.search-index)  
+6. set following Json and save:
+
+```json
+{
+  "analyzer": "caseInsensitiveWildcard",
+  "searchAnalyzer": "lucene.keyword",
+  "mappings": {
+    "dynamic": true
+  },
+  "analyzers": [
+    {
+      "name": "caseInsensitiveWildcard",
+      "tokenFilters": [
+        {
+          "type": "lowercase"
+        }
+      ],
+      "tokenizer": {
+        "type": "keyword"
+      }
+    }
+  ]
+}
 ```
