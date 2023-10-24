@@ -205,6 +205,10 @@ helm install sealed-secrets -n kube-system sealed-secrets/sealed-secrets
 - for local / staging: allow all IPs `0.0.0.0/0`
 - for production: TODO: enable Peering or Private Endpoint
 
+
+# Twilio
+- create Message Service for sending sms with an alphanumeric sender (create message service with alpha sender for staging, production and local)
+
 # Deploy Services
 - deploy in that order and wait for some services. e.g. wait until discovery, config, zipkin and rabbitmq are up and running
 

@@ -13,25 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cloud/SAAS Stack.md",
+                "file": "Cloud/Kubernetes.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "0bee6f63dfcd6486",
+            "id": "e5b792d2871e4b06",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cloud/Kubernetes.md",
+                "file": "Cloud/AWS/AWS Certification Preperation.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -60,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "port",
+                "query": "RAID",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -97,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Cloud/SAAS Stack.md",
+                "file": "Cloud/AWS/AWS Certification Preperation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,8 +122,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -134,8 +134,36 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6e0818ef819cf6cc",
+  "active": "e5b792d2871e4b06",
   "lastOpenFiles": [
+    "Cloud/AWS/attachments/E308B39B-9071-4042-A590-0ED32CAE8BE8_1_105_c.jpeg",
+    "Cloud/AWS/attachments/02F02A27-0048-4714-8CB1-A5AC05A89A42_1_105_c.jpeg",
+    "Cloud/AWS/attachments/E7B0B98B-5283-47A9-9494-F2258BEF8C88_1_105_c.jpeg",
+    "Cloud/AWS/attachments/AA6A7088-8898-4D3E-BB85-8E16714BD135_1_105_c.jpeg",
+    "Cloud/AWS/attachments/7BB56A55-81A1-4722-B950-91406030EAE3_1_105_c.jpeg",
+    "Cloud/AWS/attachments/D712E9A1-0F08-41B0-9202-1F4822E40586_1_105_c 1.jpeg",
+    "Cloud/AWS/attachments/D712E9A1-0F08-41B0-9202-1F4822E40586_1_105_c.jpeg",
+    "Cloud/AWS/attachments/Pasted image 20231025013214.png",
+    "Cloud/AWS/attachments/20C4CC5A-D030-4745-8F81-8A8603E0FA3D_1_105_c.jpeg",
+    "Cloud/AWS/attachments/Pasted image 20231025011637.png",
+    "Cloud/AWS/attachments/Pasted image 20231025011545.png",
+    "Cloud/AWS/attachments",
+    "Cloud/AWS/NACL vs Security Group.md",
+    "Cloud/AWS/AWS Certification Preperation.md",
+    "Cloud/AWS/EC2 User Data and Meta Data Example.md",
+    "Cloud/AWS/AWS+CSAA+Exam+Cram.pdf",
+    "Cloud/AWS/AWS+Cloud+Practitioner+Exam+Cram.pdf",
+    "Cloud/SAAS Stack.md",
+    "Software-Engineering/oAuth.md",
+    "Software-Engineering/oAuth/OIDC.md",
+    "Server-Administration/RAID.md",
+    "Software-Engineering/oAuth",
+    "IT-Security/Web/SQL Injection.md",
+    "IT-Security/Web/Burp Suite.md",
+    "IT-Security/Web/File Inclusion.md",
+    "IT-Security/Web/OSINT.md",
+    "Cloud/AWS",
+    "Software-Engineering/GIT.md",
     "Software-Engineering/Web/Main CSS.md",
     "Software-Engineering/Web/CSS Flexbox.md",
     "Software-Engineering/Web/React/useReducer.md",
@@ -149,39 +177,11 @@
     "Software-Engineering/Web/React/useRef.md",
     "Software-Engineering/Web/React",
     "Software-Engineering/Web/CSS Grid.md",
-    "Cloud/SAAS Stack.md",
     "Cloud/Kubernetes.md",
-    "Networks/OSI-Modell/4-Transport-Layer.md",
-    "IT-Security/Web/Burp Suite.md",
-    "Software-Engineering/Web/DOM - Document Object Model.md",
-    "Cloud/Cloud.md",
-    "Networks/OSI-Modell/OSI-Model.md",
-    "Networks/OSI-Modell/5-Sesseion-Layer.md",
-    "Networks/OSI-Modell/1-Physical-Layer.md",
-    "Networks/OSI-Modell/2-Data-Link-Layer.md",
-    "Networks/OSI-Modell/3-Network-Layer.md",
-    "Networks/OSI-Modell/6-Presentation-Layer.md",
-    "Networks/OSI-Modell/7-Application-Layer.md",
-    "Software-Engineering/VIM.md",
-    "Software-Engineering/Web/attachments/Pasted image 20230619051427.png",
-    "Software-Engineering/Web/attachments/Pasted image 20230619051344.png",
-    "Software-Engineering/Web/attachments/Pasted image 20230619050920.png",
-    "Software-Engineering/Web/attachments/Pasted image 20230619050722.png",
-    "Software-Engineering/Web/attachments/Pasted image 20230619050339.png",
-    "Software-Engineering/Web/attachments/Pasted image 20230619045353.png",
-    "Software-Engineering/Web/attachments/Pasted image 20230619045053.png",
-    "Software-Engineering/Web/attachments/Pasted image 20230619044700.png",
-    "Software-Engineering/Web/attachments/Pasted image 20230618063401.png",
-    "Software-Engineering/Web/attachments/Pasted image 20230618063221.png",
     "IT-Security/Untitled",
     "Cloud/attachments",
     "Software-Engineering/Web/attachments",
     "Software-Engineering/Web",
-    "IT-Security/Digital Forensics",
-    "Operating-Systems/Windows",
-    "IT-Security/Web/attachments",
-    "IT-Security/Web/Untitled",
-    "IT-Security/Web",
     "Untitled.canvas"
   ]
 }
