@@ -1,11 +1,13 @@
 
 1. re-watch bought Udemy courses
 2. review notes in Udemy
-3. watch AWS SkillBuilder Exam Prep
-4. Practice Exams (Udemy, AWS SkillBuilder, YT (watch))
-5. review Exam Prep PDFs ([AWS+Cloud+Practitioner+Exam+Cram](AWS+Cloud+Practitioner+Exam+Cram.pdf) and [AWS+CSAA+Exam+Cram](AWS+CSAA+Exam+Cram.pdf))
-6. If there is a new new Version of the exam -> review changes
-7. have a look at the exam guide and look at the list of included Services and check if there are unfamiliar services
+3. have a look at the Ramp-Up Guide for the specific role https://aws.amazon.com/training/ramp-up-guides/ and follow all points
+4. watch AWS SkillBuilder Exam Prep https://explore.skillbuilder.aws/learn
+5. Practice Exams (Udemy, AWS SkillBuilder, YT (watch))
+6. review Exam Prep PDFs ([AWS+Cloud+Practitioner+Exam+Cram](AWS+Cloud+Practitioner+Exam+Cram.pdf) and [AWS+CSAA+Exam+Cram](AWS+CSAA+Exam+Cram.pdf))
+7. If there is a new new Version of the exam -> review changes
+8. have a look at the exam guide and look at the list of included Services and check if there are unfamiliar services
+9. maybe have a look at twitch AWS videos for the role https://aws.amazon.com/training/twitch/
 
 
 
@@ -13,7 +15,7 @@
 # General Things I always forgot and should have a look at it
 - Difference between Guard Duty and Detective
   ![](attachments/Pasted%20image%2020231025011637.png)
-- AWS Inspector
+- AWS Inspector (identify potential software vulnerabilities and to categorize the severity of the vulnerabilities in EC2 or ECR)
 - Trusted Advisor
 - S3 can serve static websites but Cloudfront can serve static and dynamic content
 - EBS Volume types (which ha how much IOPS) https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html
@@ -59,7 +61,8 @@
 	- custom Security Group:
 		- Inbound allow: -
 		- Outbound allow: -
-- All common ML and AI Tools (SageMaker, Transcribe, Translate, Comprehend, Textract, Polly, Lex, Recognition, Kendra etc...)
+- All common ML and AI Tools (SageMaker (helps to create, train, develop ML models), Transcribe (speech to text), Translate (translations), Comprehend (uncover valuable insights and connections in text), Textract (get text out of images), Polly (Speech to text), Lex (building conversational interfaces using vice and text), Recognition (identifies persons and so on), Kendra (Enterprise search for finding answers faster) etc...)
+- Macie finds personal identifiable information for compliance
 - S3 Lifecycles
 - S3 Data consistency ![](attachments/20C4CC5A-D030-4745-8F81-8A8603E0FA3D_1_105_c.jpeg)
 - Specials for S3 (Lifecycle, Cross Region replication, Versioning, MFA Delete, Transfer Acceleration, Multipart Upload, Presigned URLs)
@@ -80,3 +83,5 @@
   ![](attachments/E7B0B98B-5283-47A9-9494-F2258BEF8C88_1_105_c.jpeg)
   ![](attachments/02F02A27-0048-4714-8CB1-A5AC05A89A42_1_105_c.jpeg)
 - Differences between Cognito User and Identity Pools
+- Athena, querying data of documents in S3 with SQL
+- AppFlow: Automate data flows between software as a service (SaaS) and AWS services
