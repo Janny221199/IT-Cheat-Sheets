@@ -64,6 +64,16 @@ db.createUser(
 ```
 - access DB e.g. via JetBrains or any other tool:
 ![](attachments/Pasted%20image%2020240717205219.png)
+- adjust `application-local.yml` in `config-service`:
+```yml
+spring:  
+  data:  
+    mongodb:
+       host: localhost  
+       port: 27017  
+       password: Test1234!
+```
+
 
 ## Docker-Compose
 - some services are required for the microservices (e.g. rabbitMQ, zipkin etc)
