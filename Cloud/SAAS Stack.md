@@ -1,5 +1,23 @@
 TODO: Terraform
 
+# Gitlab Access Tokens
+
+## Gitlab Main Account Access Tokens
+
+| Scopes | Token-Name | Usage |
+| ---- | ---- | ---- |
+| `read_api` | Maven Dependency Token Local Development macOS | local `settings.xml` in `.m2` on MacBook ([Maven](SaaS%20Local%20Development.md#Maven))   |
+
+TODO: add following access tokens
+![](attachments/Pasted%20image%2020240717152206.png)
+
+## Gitlab Second "Public" Gitlab Account Access Tokens
+(because this account is added to the K8S Manifest projects and has only limited permissions)
+
+| Scopes             | Token-Name                                                                                        |  Usage  |
+| ------------------ | ------------------------------------------------------------------------------------------------- | --- |
+| `write_repository` | write repository for gitlab CICD (MANIFESTS_TOKEN) to adjust K8S Manifests of a different project |  in gitlab main account as (global) CICD Variable `MANIFESTS_TOKEN` |
+
 # Accounts
 
 create required Accounts

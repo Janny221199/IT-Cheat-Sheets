@@ -25,24 +25,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Server-Administration/Sytemd and Systemctl.md",
+                "file": "Cloud/SaaS Stack.md",
                 "mode": "source",
                 "source": false
               }
             }
-          },
-          {
-            "id": "0b17f097eb6e99d2",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.5.3"
-              }
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -71,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "RAID",
+                "query": "SAAS",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -108,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Server-Administration/Sytemd and Systemctl.md",
+                "file": "Cloud/SaaS Stack.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -144,10 +134,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "0b17f097eb6e99d2",
+  "active": "e5b792d2871e4b06",
   "lastOpenFiles": [
-    "Cloud/AWS/AWS Certification Preperation.md",
+    "Cloud/attachments/Pasted image 20240717152206.png",
+    "Cloud/SaaS Local Development.md",
+    "Cloud/SaaS Stack.md",
+    "Cloud/Kubernetes.md",
     "Server-Administration/Sytemd and Systemctl.md",
+    "Cloud/AWS/AWS Certification Preperation.md",
     "Cloud/AWS/EC2 User Data and Meta Data Example.md",
     "Cloud/AWS/attachments/E308B39B-9071-4042-A590-0ED32CAE8BE8_1_105_c.jpeg",
     "Cloud/AWS/attachments/02F02A27-0048-4714-8CB1-A5AC05A89A42_1_105_c.jpeg",
@@ -163,7 +157,6 @@
     "Cloud/AWS/NACL vs Security Group.md",
     "Cloud/AWS/AWS+CSAA+Exam+Cram.pdf",
     "Cloud/AWS/AWS+Cloud+Practitioner+Exam+Cram.pdf",
-    "Cloud/SAAS Stack.md",
     "Software-Engineering/oAuth.md",
     "Software-Engineering/oAuth/OIDC.md",
     "Server-Administration/RAID.md",
@@ -184,10 +177,7 @@
     "Software-Engineering/Web/React/useMemo.md",
     "Software-Engineering/Web/React/useEffect.md",
     "Software-Engineering/Web/React/useState.md",
-    "Software-Engineering/Web/React/useRef.md",
     "Software-Engineering/Web/React",
-    "Software-Engineering/Web/CSS Grid.md",
-    "Cloud/Kubernetes.md",
     "IT-Security/Untitled",
     "Cloud/attachments",
     "Software-Engineering/Web/attachments",
