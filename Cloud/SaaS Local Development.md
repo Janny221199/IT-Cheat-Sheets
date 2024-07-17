@@ -26,7 +26,10 @@
 </settings>
 ```
 
-## Mongo DB Atlas
+## Mongo DB 
+
+## Atlas
+- cloud based MongoDB
 - we are using mongo DB Atlas. also for local development (because we can easily use multiple databases and search indexes and so on) (if required or no internet connection you can use local mongoDB Docker container (see docker-compose))
 - create free shared MongoDB organisation, project and cluster
 - configure network access to allow only your IP
@@ -40,10 +43,31 @@ spring:
       uri: "mongodb+srv://sanker:Test1234!@XXX.mongodb.net"
 ```
 
+## Docker
+- for local development if network issues INSTEAD of Atlas
+- run docker with `docker-compose.yml`
+- make sure to have the `mongo-init.js` file for access on the `database`database:
+```js
+// for setting up the access permssions on the database "database"
+db.createUser(
+	{
+		user: "sanker",
+		pwd: "Test1234!",
+		roles: [
+			{
+				role: "readWrite",
+				db: "database"
+			}
+		]
+	}
+);
+```
+- access DB e.g. via JetBrains or any other tool:
+![](attachments/Pasted%20image%2020240717205219.png)
 
 ## Docker-Compose
 - some services are required for the microservices (e.g. rabbitMQ, zipkin etc)
-- start docker stack with `docker-compose up -d`:
+- start docker stack with `docker-compose up -d rabbitmq zipkin`: (you can skip mongo if you use Atlas)
 ```yml
 version: '3.7'
   
@@ -56,6 +80,7 @@ services:
   #     - MONGO_INITDB_ROOT_PASSWORD=Test1234!
   #   volumes:
   #     - mongodb:/data/db
+  #.    - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
   #   ports:
   #     - 27017:27017
   rabbitmq:

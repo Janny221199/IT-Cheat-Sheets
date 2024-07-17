@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "e2fa736887eeed88",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Cloud/SaaS Local Development.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Cloud/SaaS Stack.md",
+                "file": "Cloud/SaaS Local Development.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,8 +146,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e5b792d2871e4b06",
+  "active": "e2fa736887eeed88",
   "lastOpenFiles": [
+    "Cloud/attachments/Pasted image 20240717205219.png",
     "Cloud/attachments/Pasted image 20240717152206.png",
     "Cloud/SaaS Local Development.md",
     "Cloud/SaaS Stack.md",
@@ -152,7 +165,6 @@
     "Cloud/AWS/attachments/D712E9A1-0F08-41B0-9202-1F4822E40586_1_105_c.jpeg",
     "Cloud/AWS/attachments/Pasted image 20231025013214.png",
     "Cloud/AWS/attachments/20C4CC5A-D030-4745-8F81-8A8603E0FA3D_1_105_c.jpeg",
-    "Cloud/AWS/attachments/Pasted image 20231025011637.png",
     "Cloud/AWS/attachments",
     "Cloud/AWS/NACL vs Security Group.md",
     "Cloud/AWS/AWS+CSAA+Exam+Cram.pdf",
