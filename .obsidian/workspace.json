@@ -44,7 +44,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Cloud/SaaS Local Development.md",
+                "file": "Cloud/SaaS Stack.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -146,25 +146,25 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e2fa736887eeed88",
+  "active": "e5b792d2871e4b06",
   "lastOpenFiles": [
-    "Cloud/attachments/Pasted image 20240717205219.png",
-    "Cloud/attachments/Pasted image 20240717152206.png",
-    "Cloud/SaaS Local Development.md",
+    "Cloud/attachments/Pasted image 20240826225747.png",
+    "Cloud/attachments/Pasted image 20240826225548.png",
+    "Cloud/attachments/Pasted image 20240826225418.png",
+    "Cloud/attachments/Pasted image 20240826225238.png",
+    "Cloud/attachments/Pasted image 20240826224917.png",
+    "Cloud/attachments/Pasted image 20240826224615.png",
+    "Cloud/attachments/Pasted image 20240826224428.png",
+    "Cloud/attachments/Pasted image 20240826223051.png",
+    "Cloud/attachments/Pasted image 20240826222937.png",
+    "Cloud/attachments/Pasted image 20240826222821.png",
+    "Cloud/attachments/Pasted image 20240824192141.png",
     "Cloud/SaaS Stack.md",
     "Cloud/Kubernetes.md",
+    "Cloud/SaaS Local Development.md",
     "Server-Administration/Sytemd and Systemctl.md",
     "Cloud/AWS/AWS Certification Preperation.md",
     "Cloud/AWS/EC2 User Data and Meta Data Example.md",
-    "Cloud/AWS/attachments/E308B39B-9071-4042-A590-0ED32CAE8BE8_1_105_c.jpeg",
-    "Cloud/AWS/attachments/02F02A27-0048-4714-8CB1-A5AC05A89A42_1_105_c.jpeg",
-    "Cloud/AWS/attachments/E7B0B98B-5283-47A9-9494-F2258BEF8C88_1_105_c.jpeg",
-    "Cloud/AWS/attachments/AA6A7088-8898-4D3E-BB85-8E16714BD135_1_105_c.jpeg",
-    "Cloud/AWS/attachments/7BB56A55-81A1-4722-B950-91406030EAE3_1_105_c.jpeg",
-    "Cloud/AWS/attachments/D712E9A1-0F08-41B0-9202-1F4822E40586_1_105_c 1.jpeg",
-    "Cloud/AWS/attachments/D712E9A1-0F08-41B0-9202-1F4822E40586_1_105_c.jpeg",
-    "Cloud/AWS/attachments/Pasted image 20231025013214.png",
-    "Cloud/AWS/attachments/20C4CC5A-D030-4745-8F81-8A8603E0FA3D_1_105_c.jpeg",
     "Cloud/AWS/attachments",
     "Cloud/AWS/NACL vs Security Group.md",
     "Cloud/AWS/AWS+CSAA+Exam+Cram.pdf",

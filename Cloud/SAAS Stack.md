@@ -4,12 +4,10 @@ TODO: Terraform
 
 ## Gitlab Main Account Access Tokens
 
-| Scopes | Token-Name | Usage |
-| ---- | ---- | ---- |
-| `read_api` | Maven Dependency Token Local Development macOS | local `settings.xml` in `.m2` on MacBook ([Maven](SaaS%20Local%20Development.md#Maven))   |
-
-TODO: add following access tokens
-![](attachments/Pasted%20image%2020240717152206.png)
+| Scopes          | Token-Name                                     | Usage                                                                                                                                       |
+| --------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `read_api`      | Maven Dependency Token Local Development macOS | local `settings.xml` in `.m2` on MacBook ([Maven](SaaS%20Local%20Development.md#Maven))                                                     |
+| `read_registry` | `[APPLICATION]` Container Registry for K8S     | in [docker-config-secret.yml](SaaS%20Stack.md#docker-config-secret.yml) docker-config-secret.yml for K8S to access Gitlab container registy |
 
 ## Gitlab Second "Public" Gitlab Account Access Tokens
 (because this account is added to the K8S Manifest projects and has only limited permissions)
@@ -31,6 +29,8 @@ create required Accounts
 - Twilio
 
 # GCP Project
+
+- eventually increase Quota (Disk Storage and in-use regional external IPv4)
 
 TODO:
 
@@ -63,7 +63,9 @@ gcloud compute addresses create website-static-ip-production --project=salespect
 ```
 
 2. Add IPs in DNS (TODO: CLI cmd)
-3. Add Domain Names in google managed certificate in kubernetes yml for gateway and frontend (TODO: outsource not in manifest file because gateway must be dynamic: https://chat.openai.com/share/26932bd3-d743-4c3a-b396-3dd2556fe0c0)
+   example in Hetzner:
+   ![](attachments/Pasted%20image%2020240824192141.png)
+1. Add Domain Names in google managed certificate in kubernetes yml for gateway and frontend and website (TODO: outsource not in manifest file because gateway must be dynamic: https://chat.openai.com/share/26932bd3-d743-4c3a-b396-3dd2556fe0c0)
 
 # ArgoCD
 
@@ -74,7 +76,7 @@ kubectl create namespace argocd
 
 ## Install
 
-1. create file `argocd-resource.yaml`:
+1. create file locally `argocd-resource.yaml`:
 ```yaml
 controller: # monitor resources for controller
   resources:
@@ -154,6 +156,7 @@ helm repo add argo https://argoproj.github.io/argo-helm
 helm -n argocd install argocd argo/argo-cd -f argocd-resource.yaml
 ```
 
+...wait until everything is set up successfully (check with `kubectl get all -n argocd`)
 
 ## UI
 ### Port Forwarding
@@ -192,7 +195,7 @@ with port forwarding: `argocd login localhost:8080`
 ```cmd
 argocd account update-password
 ```
-
+...save password in password manager
 
 
 # Sealed Secrets (Maybe)
@@ -217,7 +220,7 @@ helm install sealed-secrets -n kube-system sealed-secrets/sealed-secrets
 # MongoDB
 - enable network access and database access
 ## Database access
-- set database access with username and password and provide it in backend configuration
+- set database access with username (`sanker`) and password and provide it in backend configuration
 
 ## Network access
 - for local / staging: allow all IPs `0.0.0.0/0`
@@ -226,11 +229,107 @@ helm install sealed-secrets -n kube-system sealed-secrets/sealed-secrets
 
 # Twilio
 - create Message Service for sending sms with an alphanumeric sender (create message service with alpha sender for staging, production and local)
+TODO insert image
+
+
+# Configure Configuration / Secret Files for Kubernetes
+
+## java config and config encryption key 
+- create secure config encryption key for staging AND production and save in password manager
+- adjust java spring config values and use encryption key for secrets
+![](attachments/Pasted%20image%2020240824152703.png)
+## argo-repo-secret.yml
+- create a file `argo-repo-secret.yml`
+- create new ssh key: `ssh-keygen -t rsa -b 4096`
+- add the ssh key in the Gitlab Second "Public" Account (because this account is added to the K8S Manifest projects and has only limited permissions)
+- without expiry date
+- name: `[APPLICATION]-argocd-manifests` -> use a different key for each application to be able to revoke some later
+![](attachments/Pasted%20image%2020240824143436.png)
+
+- create a file `argo-repo-secret.yml`
+```yaml
+# TODO: dont have plain text secrets in File. use e.g. sealed SecretsapiVersion: v1
+apiVersion: v1
+kind: Secret
+metadata:
+	name: private-repo-creds
+	namespace: argocd
+	labels:
+		argocd.argoproj.io/secret-type: repo-creds
+stringData:
+	type: git
+	url: git@gitlab.com:sanker-io/
+	sshPrivateKey: |
+		-----BEGIN OPENSSH PRIVATE KEY-----
+		XXX
+		-----END OPENSSH PRIVATE KEY-----
+
+  
+
+# Public Key:
+# ssh-rsa XXX salespects-argocd-manifests
+```
+- save file in password manager (as long as it is not a sealed secret)
+
+## docker-config-secret.yml
+- encode `auth` base64: `echo -n "jan-eric@sanker.io:[GITLAB_READ_REGISTRY_ACCESS_TOKEN]" | base64`
+- -> use a different access token for each application to be able to revoke some later
+- create file `dockerconfigjson.json` with json object with credentials:
+```json
+{
+	"auths":{
+		"registry.gitlab.com":{
+			"username":"jan-eric@sanker.io",
+			"password":"[GITLAB_READ_REGISTRY_ACCESS_TOKEN]",
+			"email":"jan-eric@sanker.io",
+			"auth":"[BASE64_ENCODED_AUTH_OBJECT_FROM_STEEP_BEFORE]"
+		}
+	}
+}
+```
+
+- encode json object: `cat dockerconfigjson.json | base64` -> make sure the quotation marks are not removed (thats why we are using the file, because when we would provide the json object directly, bash could not handle the quotation marks)
+- create file `docker-config-secret.yml`
+```yaml
+# TODO: dont have base64 encoded secrets in File. use e.g. sealed Secrets
+apiVersion: v1
+kind: Secret
+metadata:
+name: docker-config-secret
+type: kubernetes.io/dockerconfigjson
+data:
+.dockerconfigjson: [BASE64_ENCODED_JSON_OBJECT_FROM_STEP_BEFORE]
+```
+- save file in password manager (as long as it is not a sealed secret)
+
+## general-secret-staging.yml and general-secret-production.yml
+
+- create file `general-secret-staging.yml` and `general-secret-production.yml` (add or remove data based on application requirements)
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+	name: general-secret-[staging/production]
+	namespace: [staging/production]
+type: Opaque
+data:
+	CONFIG_ENCRYPT_KEY: [BASE64_ENCODED_VALUE]
+	CONFIG_PASSWORD: [BASE64_ENCODED_VALUE]
+	CONFIG_SERVER_URL: [BASE64_ENCODED_VALUE]
+	GOOGLE_API_KEY: [BASE64_ENCODED_VALUE]
+	RABBITMQ_PASSWORD: [BASE64_ENCODED_VALUE]
+```
+- save file in password manager (as long as it is not a sealed secret)
+
 
 # Deploy Services
 - deploy in that order and wait for some services. e.g. wait until discovery, config, zipkin and rabbitmq are up and running
 
 ## Staging
+- keep in mind that some services require other services. So do not start all at the same time. Also Google Autopilot cannot start pods if you start too many at the same time 
+- website gateway only available when Pods, Ingress and certificates are successfully created. certificates need some time, check status with `kubectl get ManagedCertificate -n [staging/production]`
+- list most common items: `kubectl get all -n [staging/production]`
+- get logs: `kubectl logs -n [staging/production] [POD_NAME]`
 ### ArgoCD
 ```cmd
 kubectl create ns staging
@@ -317,20 +416,39 @@ kubectl apply -k Salespects/manifests/website-manifests/overlays/production
 
 
 # Configure
+
+## Create Admin Account
+1. create / register Account via Postman (because for frontend service start we should provide productId as ENV, so we should do first steps via API)
+	1. change Postman Host, Port, service-name suitable for live requests
+	   ![](attachments/Pasted%20image%2020240826224428.png)
+	   2. register user (with secure password)
+   2. Login and set jwt and userId as Postman Variable
+   3. change role in MongoDB Atlas
+	    ![](attachments/Pasted%20image%2020240826224615.png)
+
+
+
 ## Create Prices
 1. Create ProductGroup
-2. Create Product(s)
+   ![](attachments/Pasted%20image%2020240826224917.png)
+2. Create Product(s) (with scopes)
+   ![](attachments/Pasted%20image%2020240826225238.png)
 3. Create monthly / yearly Price(s)
-4. provide Product Group as frontend env
+   ![](attachments/Pasted%20image%2020240826225418.png)
+   ![](attachments/Pasted%20image%2020240826225548.png)
+4. provide Product Group as frontend env (`DEFAULT_PRODUCT_GROUP_ID` in project `frontend-manifests`)
+   ![](attachments/Pasted%20image%2020240826225747.png)
 
 ## set MongoDB search indexes
+- let database collections be created at first after the initial startup of the services
 
 - e.g.: salespects contact search:
 1. within "Browse Collections" click on "Search"  
 2. click "Create Index"  
-3. select "Json Editor"  
+3. select "Json Editor"
+   ![](attachments/Pasted%20image%2020240826222821.png)
 4. select collection "salespects.contacts"  
-5. specify index name "contacts-index" (as specified in config mongo.collections.contacts.search-index)  
+5. specify index name "contacts-index" (as specified in config `mongo.collections.contacts.search-index`)  
 6. set following Json and save:
 
 ```json
@@ -355,3 +473,6 @@ kubectl apply -k Salespects/manifests/website-manifests/overlays/production
   ]
 }
 ```
+
+![](attachments/Pasted%20image%2020240826222937.png)
+![](attachments/Pasted%20image%2020240826223051.png)

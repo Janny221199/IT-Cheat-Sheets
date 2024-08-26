@@ -4,7 +4,12 @@
 ## Java
 - install Java 21 (e.g. via IntelliJ) openjdk
 ## Maven
-- setup access for remote gitlab maven repository with a `read_api` personal access token
+- setup gitlab token for maven repo:
+
+| Scopes | Token-Name | Usage |
+| ---- | ---- | ---- |
+| `read_api` | Maven Dependency Token Local Development macOS | local `settings.xml` in `.m2` on MacBook ([Maven](SaaS%20Local%20Development.md#Maven))   |
+
 - create file `settings.xml` in `.m2` folder
 
 ```xml
