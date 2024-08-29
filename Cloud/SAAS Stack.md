@@ -476,3 +476,44 @@ kubectl apply -k Salespects/manifests/website-manifests/overlays/production
 
 ![](attachments/Pasted%20image%2020240826222937.png)
 ![](attachments/Pasted%20image%2020240826223051.png)
+
+
+## Log Access for Pods for other IAM Users for the Staging Environment
+### RBAC + IAM Access
+1. User in Google IAM hinzufügen mit der Rolle `Kubernetes Engine Cluster Viewer`:
+   ![](attachments/Pasted%20image%2020240830021734.png)
+2. create file `staging-logs-role.yml` and adjust user accounts:
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: staging
+  name: pod-reader-staging
+rules:
+- apiGroups: [""] # "" indicates the core API group
+  resources: ["pods", "pods/log"]
+  verbs: ["get", "watch", "list"]
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: pod-reader-binding-staging
+  namespace: staging
+roleRef:
+  kind: Role
+  name: pod-reader-staging
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+# Google Cloud user account
+- kind: User
+  name: kirkasius@gmail.com # rene
+```
+3. apply file `kubectl apply -f staging-logs-role.yml`
+
+### Access Logs
+1. login to cluster via gcloud: `gcloud container clusters get-credentials [CLUSTER_NAME] --region [REGION] --project [PROJECT_NAME]`
+2. list all pods: `kubectl get pods -n staging` or `kubectl get all -n staging`
+3. copy Pod name
+4. view logs: `kubectl [POD_NAME] logs  -n staging` 
+(if there are several pods per deployment, you would probably have to look at the logs of the deployment and adjust the role authorization as well: `kubectl logs [DEPLOYMENT_NAME] -n staging`)
+
