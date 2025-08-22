@@ -16,7 +16,9 @@
                 "file": "Cloud/Kubernetes.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "Kubernetes"
             }
           },
           {
@@ -28,7 +30,9 @@
                 "file": "Cloud/SaaS Stack.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "SaaS Stack"
             }
           },
           {
@@ -37,10 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cloud/SaaS Local Development.md",
+                "file": "Operating-Systems/Operating-Systems.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "Operating-Systems"
             }
           }
         ],
@@ -63,8 +69,11 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
-              }
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -73,13 +82,15 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "SAAS",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -87,10 +98,13 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -118,7 +132,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for SaaS Stack"
             }
           },
           {
@@ -126,7 +142,9 @@
             "type": "leaf",
             "state": {
               "type": "advanced-tables-toolbar",
-              "state": {}
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
             }
           }
         ],
@@ -148,20 +166,22 @@
   },
   "active": "e5b792d2871e4b06",
   "lastOpenFiles": [
-    "Cloud/attachments/Pasted image 20240830021734.png",
-    "Cloud/attachments/Pasted image 20240826225747.png",
-    "Cloud/attachments/Pasted image 20240826225548.png",
-    "Cloud/attachments/Pasted image 20240826225418.png",
-    "Cloud/attachments/Pasted image 20240826225238.png",
-    "Cloud/attachments/Pasted image 20240826224917.png",
-    "Cloud/attachments/Pasted image 20240826224615.png",
-    "Cloud/attachments/Pasted image 20240826224428.png",
-    "Cloud/attachments/Pasted image 20240826223051.png",
-    "Cloud/attachments/Pasted image 20240826222937.png",
-    "Cloud/attachments/Pasted image 20240826222821.png",
+    "Cloud/attachments/Pasted image 20250821183909.png",
+    "Cloud/attachments/Pasted image 20250821183902.png",
+    "Cloud/attachments/Pasted image 20250821181444.png",
+    "Cloud/attachments/Screenshot 2025-08-21 at 16.51.47.png",
+    "Cloud/attachments/Pasted image 20250821160522.png",
+    "Cloud/attachments/Pasted image 20250821160344.png",
+    "Cloud/attachments/Pasted image 20250815153823.png",
+    "Cloud/attachments/Pasted image 20250815153405.png",
+    "Cloud/attachments/Pasted image 20250815153259.png",
+    "Cloud/attachments/Pasted image 20250815152855.png",
+    "Cloud/SaaS Local Development.md",
     "Cloud/SaaS Stack.md",
     "Cloud/Kubernetes.md",
-    "Cloud/SaaS Local Development.md",
+    "Cloud/attachments/Pasted image 20250531001104.png",
+    "Operating-Systems/Operating-Systems.md",
+    "Software-Engineering/Web/IIFBB - Proxify Docs.md",
     "Server-Administration/Sytemd and Systemctl.md",
     "Cloud/AWS/AWS Certification Preperation.md",
     "Cloud/AWS/EC2 User Data and Meta Data Example.md",
@@ -187,8 +207,6 @@
     "Software-Engineering/Web/React/useContext.md",
     "Software-Engineering/Web/React/HTTP Requests.md",
     "Software-Engineering/Web/React/useMemo.md",
-    "Software-Engineering/Web/React/useEffect.md",
-    "Software-Engineering/Web/React/useState.md",
     "Software-Engineering/Web/React",
     "IT-Security/Untitled",
     "Cloud/attachments",

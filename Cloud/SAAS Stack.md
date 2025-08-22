@@ -12,9 +12,9 @@ TODO: Terraform
 ## Gitlab Second "Public" Gitlab Account Access Tokens
 (because this account is added to the K8S Manifest projects and has only limited permissions)
 
-| Scopes             | Token-Name                                                                                        |  Usage  |
-| ------------------ | ------------------------------------------------------------------------------------------------- | --- |
-| `write_repository` | write repository for gitlab CICD (MANIFESTS_TOKEN) to adjust K8S Manifests of a different project |  in gitlab main account as (global) CICD Variable `MANIFESTS_TOKEN` |
+| Scopes             | Token-Name                                                                                        | Usage                                                              |
+| ------------------ | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| `write_repository` | write repository for gitlab CICD (MANIFESTS_TOKEN) to adjust K8S Manifests of a different project | in gitlab main account as (global) CICD Variable `MANIFESTS_TOKEN` |
 
 # Accounts
 
@@ -197,6 +197,11 @@ argocd account update-password
 ```
 ...save password in password manager
 
+### Delete ArgoCD Initial Password Secret
+```cmd
+kubectl -n argocd delete secret argocd-initial-admin-secret
+```
+
 
 # Sealed Secrets (Maybe)
 not used atm because we store the secret file somewhere else and upload them manually at system init
@@ -220,11 +225,22 @@ helm install sealed-secrets -n kube-system sealed-secrets/sealed-secrets
 # MongoDB
 - enable network access and database access
 ## Database access
-- set database access with username (`sanker`) and password and provide it in backend configuration
+- set database access with username (`sanker`) and password and provide it in encypted backend configuration in URI
 
 ## Network access
-- for local / staging: allow all IPs `0.0.0.0/0`
-- for production: TODO: enable Peering or Private Endpoint
+
+### local / staging
+
+allow all IPs `0.0.0.0/0`
+
+### VPC Peering (production)
+Create VPC Peering on both sides: GCP and MongoDB Atlas
+
+1. create VPC Peering in MongoDB Atlas with the project ID of the GCP project and the VPC name (so far I used only the `default` VPC from the GCP project) ![](attachments/Pasted%20image%2020250815152855.png)
+2. create the VPC Peering on the GCP side`salespects-production-mongodb-vpc-peering` with the given projectId and VPC name from MongoDB ![](attachments/Pasted%20image%2020250815153823.png)
+3. WITH GCP GKE THIS DID NOT WORK (ONLY WITH GCP VM) - USE IP RANGE FROM NEXT STEP AND SKIP THIS STEP!! Get the IP CIDR subnet range of the specific region within the VPC network and add the IP CIDR range to the IP allow list in MongoDB: ![](attachments/Pasted%20image%2020250821160344.png)![](attachments/Pasted%20image%2020250821160522.png)
+4. add the GKE Cluster pod IPv4 range to the IP Allow List in Mongo DB (because with GKE the VPC subnet CIDR range did not work): ![](attachments/Pasted%20image%2020250821181444.png)![](attachments/Pasted%20image%2020250821183909.png)
+5. Get the PRIVATE connection string from MongoDB to connect via the VPC! (connection string must include `-pri`): ![](attachments/Screenshot%202025-08-21%20at%2016.51.47.png)
 
 
 # Twilio
@@ -418,7 +434,7 @@ kubectl apply -k Salespects/manifests/website-manifests/overlays/production
 # Configure
 
 ## Create Admin Account
-1. create / register Account via Postman (because for frontend service start we should provide productId as ENV, so we should do first steps via API)
+1. create / register Account via Postman (because for frontend service start we should provide productId as ENV, so we should do first steps via API) -> REGISTER WITH frontend, because here will be the stripe customer created as well!
 	1. change Postman Host, Port, service-name suitable for live requests
 	   ![](attachments/Pasted%20image%2020240826224428.png)
 	   2. register user (with secure password)
@@ -428,11 +444,11 @@ kubectl apply -k Salespects/manifests/website-manifests/overlays/production
 
 
 
-## Create Prices
-1. Create ProductGroup
+## Create Payment Objects
+1. Create ProductGroup (and set productGroupId as Variable)
    ![](attachments/Pasted%20image%2020240826224917.png)
-2. Create Product(s) (with scopes)
-   ![](attachments/Pasted%20image%2020240826225238.png)
+2. Create Product(s) (with scopes und ohne UnitLabel) (and set productId as Variable)
+   ![](attachments/Pasted%20image%2020250531001104.png)
 3. Create monthly / yearly Price(s)
    ![](attachments/Pasted%20image%2020240826225418.png)
    ![](attachments/Pasted%20image%2020240826225548.png)
