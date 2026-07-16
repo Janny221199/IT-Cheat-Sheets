@@ -6,15 +6,16 @@ TODO: Terraform
 
 | Scopes          | Token-Name                                     | Usage                                                                                                                                       |
 | --------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| `read_api`      | Maven Dependency Token Local Development macOS | local `settings.xml` in `.m2` on MacBook ([Maven](SaaS%20Local%20Development.md#Maven))                                                     |
-| `read_registry` | `[APPLICATION]` Container Registry for K8S     | in [docker-config-secret.yml](SaaS%20Stack.md#docker-config-secret.yml) docker-config-secret.yml for K8S to access Gitlab container registy |
+| `read_api`      | Maven Dependency Token Local Development macOS | local `settings.xml` in `.m2` on MacBook ([Maven](../SaaS/SaaS%20Local%20Development.md#Maven))                                                     |
+| `read_registry` | `[APPLICATION]` Container Registry for K8S     | in [docker-config-secret.yml](SaaS%20Stack%20OLD.md#docker-config-secret.yml) docker-config-secret.yml for K8S to access Gitlab container registy |
 
 ## Gitlab Second "Public" Gitlab Account Access Tokens
 (because this account is added to the K8S Manifest projects and has only limited permissions)
 
-| Scopes             | Token-Name                                                                                        | Usage                                                              |
-| ------------------ | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| `write_repository` | write repository for gitlab CICD (MANIFESTS_TOKEN) to adjust K8S Manifests of a different project | in gitlab main account as (global) CICD Variable `MANIFESTS_TOKEN` |
+| Scopes             | Token-Name                                                                                        | Usage                                                                                                                                                              |
+| ------------------ | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `write_repository` | write repository for gitlab CICD (MANIFESTS_TOKEN) to adjust K8S Manifests of a different project | in gitlab main account as (global) CICD Variable `MANIFESTS_TOKEN`                                                                                                 |
+| `read_repository`  | read repository for config repo and notification templates                                        | in [general-secret-staging.yml and general-secret-production.yml](#general-secret-staging.yml%20and%20general-secret-production.yml) for accessing the config repo |
 
 # Accounts
 
@@ -76,7 +77,7 @@ kubectl create namespace argocd
 
 ## Install
 
-1. create file locally `argocd-resource.yaml`:
+1. create file locally `argocd-resources.yaml`:
 ```yaml
 controller: # monitor resources for controller
   resources:
@@ -153,7 +154,7 @@ notifications:
 2. run:
 ```cmd
 helm repo add argo https://argoproj.github.io/argo-helm
-helm -n argocd install argocd argo/argo-cd -f argocd-resource.yaml
+helm -n argocd install argocd argo/argo-cd -f SaaS/argocd-resources.yaml
 ```
 
 ...wait until everything is set up successfully (check with `kubectl get all -n argocd`)
@@ -244,8 +245,12 @@ Create VPC Peering on both sides: GCP and MongoDB Atlas
 
 
 # Twilio
-- create Message Service for sending sms with an alphanumeric sender (create message service with alpha sender for staging, production and local)
+- create Message Service for sending sms with an alphanumeric sender (create message service with ALPHA sender for staging, production and local)
 TODO insert image
+
+![](attachments/Pasted%20image%2020250821234348.png)
+![](attachments/Pasted%20image%2020250821234325.png)
+![](attachments/Pasted%20image%2020250821234451.png)
 
 
 # Configure Configuration / Secret Files for Kubernetes
@@ -332,6 +337,8 @@ data:
 	CONFIG_ENCRYPT_KEY: [BASE64_ENCODED_VALUE]
 	CONFIG_PASSWORD: [BASE64_ENCODED_VALUE]
 	CONFIG_SERVER_URL: [BASE64_ENCODED_VALUE]
+	CONFIG_GIT_URL: [BASE64_ENCODED_VALUE]
+	CONFIG_GIT_PASSWORD: [BASE64_ENCODED_VALUE]
 	GOOGLE_API_KEY: [BASE64_ENCODED_VALUE]
 	RABBITMQ_PASSWORD: [BASE64_ENCODED_VALUE]
 ```
@@ -445,15 +452,27 @@ kubectl apply -k Salespects/manifests/website-manifests/overlays/production
 
 
 ## Create Payment Objects
-1. Create ProductGroup (and set productGroupId as Variable)
+1. Create ProductGroup
    ![](attachments/Pasted%20image%2020240826224917.png)
-2. Create Product(s) (with scopes und ohne UnitLabel) (and set productId as Variable)
+2. Create Product(s) (with scopes und ohne UnitLabel) (and set productId as Variable after for the prices)
    ![](attachments/Pasted%20image%2020250531001104.png)
 3. Create monthly / yearly Price(s)
    ![](attachments/Pasted%20image%2020240826225418.png)
    ![](attachments/Pasted%20image%2020240826225548.png)
-4. provide Product Group as frontend env (`DEFAULT_PRODUCT_GROUP_ID` in project `frontend-manifests`)
+4. provide ProductGroupID as frontend env (`DEFAULT_PRODUCT_GROUP_ID` in project`frontend-manifests`)
    ![](attachments/Pasted%20image%2020240826225747.png)
+
+
+## set PaymentMethods in stripe
+- configure or remove stripe payment methods FOR ALL PaymentMethodConfigurations: ![](attachments/Pasted%20image%2020250821232004.png) ![](attachments/Pasted%20image%2020250821231945.png)
+
+## change Stripe Emails
+
+![](attachments/Pasted%20image%2020251006031217.png)
+![](attachments/Pasted%20image%2020251006005438.png)
+![](attachments/Pasted%20image%2020251006005507.png)
+![](attachments/Pasted%20image%2020251006010915.png)
+![](attachments/Pasted%20image%2020251006031000.png)
 
 ## set MongoDB search indexes
 - let database collections be created at first after the initial startup of the services
@@ -533,3 +552,30 @@ subjects:
 4. view logs: `kubectl [POD_NAME] logs  -n staging` 
 (if there are several pods per deployment, you would probably have to look at the logs of the deployment and adjust the role authorization as well: `kubectl logs [DEPLOYMENT_NAME] -n staging`)
 
+
+## Log Notification via Slack
+
+1. query logs and save metric as `production_error_log_count`
+```
+severity>=ERROR
+resource.type="k8s_container"
+resource.labels.cluster_name="autopilot-cluster-1"
+resource.labels.namespace_name="production"
+NOT (resource.labels.container_name="website-container" OR resource.labels.container_name="frontend-container")
+```
+
+![](attachments/Pasted%20image%2020251027231854.png)
+
+
+2. create email and slack notification channel for `Alerting`
+![](attachments/Pasted%20image%2020251027232940.png)
+![](attachments/Pasted%20image%2020251027233324.png)
+![](attachments/Pasted%20image%2020251027233559.png)
+
+3. create `Alert Polcy` and select the created metic (you might need to uncheck `Active`)
+
+![](attachments/Pasted%20image%2020251027234452.png)
+![](attachments/Pasted%20image%2020251027234910.png)
+![](attachments/Pasted%20image%2020251027235313.png)
+
+![](attachments/Pasted%20image%2020251027235552.png)

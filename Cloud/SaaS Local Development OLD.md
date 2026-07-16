@@ -8,7 +8,7 @@
 
 | Scopes | Token-Name | Usage |
 | ---- | ---- | ---- |
-| `read_api` | Maven Dependency Token Local Development macOS | local `settings.xml` in `.m2` on MacBook ([Maven](SaaS%20Local%20Development.md#Maven))   |
+| `read_api` | Maven Dependency Token Local Development macOS | local `settings.xml` in `.m2` on MacBook ([Maven](../SaaS/SaaS%20Local%20Development.md#Maven))   |
 
 - create file `settings.xml` in `.m2` folder
 
