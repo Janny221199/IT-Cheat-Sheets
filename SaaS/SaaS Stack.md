@@ -62,3 +62,46 @@
 | `write_repository` | write repository for gitlab CICD (MANIFESTS_TOKEN) to adjust K8S Manifests of a different project | in gitlab main account as (global) CICD Variable `MANIFESTS_TOKEN` |
 | `read_repository`  | read repository for config repo and notification templates                                        | TODO XXX                                                           |
 
+## AWS
+### Root Account
+1. create Root User account, provide card details and so on.
+2. enable MFA
+3. select Region Frankfurt
+
+
+### Account Name
+1. Account Settings
+   ![](attachments/Pasted%20image%2020260718181555.png)
+
+### IAM Access to Billing Information
+so we can do that as a non root user
+1. Account Settings
+   ![](attachments/Pasted%20image%2020260718181644.png)
+
+### Configuring Account Alias
+for login url
+1. go to IAM (NOT IAM Identity Center)
+2. on the right side set an Account Alias
+   ![](attachments/Pasted%20image%2020260718182721.png)
+
+### Billing Preferences 
+1. Account Settings
+2. Billing Preferences
+3. Activate CloudWatch Billing Alerts AND AWS Free Tier Alerts AND PDF Invoice Delivery
+   ![](attachments/Screenshot%202026-07-18%20at%2018.20.34.png)
+
+### Monthly Budget Alerts
+1. Account Settings
+2. Budgets
+3. Create a "Monthly Cost Budget" with the specific amount and provide emails (also `jan-eric@sanker.io`!!)
+   ![](attachments/Screenshot%202026-07-18%20at%2018.23.52.png)
+
+### IAM Account
+for normal usage (do NOT use root account)
+1. go to IAM (NOT IAM Identity Center)
+2. create Group for Admins
+   ![](attachments/Pasted%20image%2020260718182942.png)
+3. create Admin User (I do without Identity Center, because I do not need SSO)
+   ![](attachments/Screenshot%202026-07-18%20at%2018.35.29.png)
+4. add to the Admins Group
+5. enable MFA
