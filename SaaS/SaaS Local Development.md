@@ -6,9 +6,9 @@
 ## Maven
 - setup gitlab token for maven repo:
 
-| Scopes     | Token-Name                                     | Usage                                    |
-| ---------- | ---------------------------------------------- | ---------------------------------------- |
-| `read_api` | Maven Dependency Token Local Development macOS | local `settings.xml` in `.m2` on MacBook |
+| Scopes     | Token-Name                                                      | Type                                                                           | Usage                                    |
+| ---------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------ | ---------------------------------------- |
+| `read_api` | Maven Dependency Token Local Development macOS For All Projects | Legacy Token (not fine-grained), because locally I want to access all projects | local `settings.xml` in `.m2` on MacBook |
 
 - create file `settings.xml` in `.m2` folder
 
