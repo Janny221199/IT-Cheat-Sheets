@@ -1,0 +1,13 @@
+1. connect camera to WiFi (and set to 2.4G only)
+2. Set static private IP address e.g. `192.168.2.22X` and reboot camera
+3. allow http or https for camera to access the admin interface (mobile App: `Settings` -> `More Features` -> `Advanced Network Settings` -> `Server Settings`)
+4. disable `UPnP` and `UID` within the Advanced Network Settings (currently only via Web Admin Portal) to ensure that no one outside the home network can access the video material and it is not uploaded to Reolink (web App: `Settings` -> `Network` -> `Advanced`)
+   ![](attachments/Screenshot%202026-10-17%20at%2018.28.21.png)
+5. ensure Auto-Update turned on
+6. disable watermark
+7. enable Audio recording
+8. Set Movement / Smart Detection (1. Object Size, All-day Sensitivity, Non-Detection-Zone)
+9. create notification (email or push)
+10. create new user (e.g. `sanker`) with no admin permissions
+11. connect to mobile Reolink App via this IP + device password and not with QR-Code or UID (`+` -> `Manual Input` -> `IP`)
+   

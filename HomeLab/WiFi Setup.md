@@ -1,0 +1,6 @@
+- disable WPS
+- set a strong password
+- setup a Guest Network
+- maybe setup MAC allowlist
+- make sure that no ports are outside
+- download ans save configuration File

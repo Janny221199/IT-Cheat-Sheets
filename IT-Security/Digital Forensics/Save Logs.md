@@ -1,7 +1,0 @@
-- on a website you should log every user interaction to trace down the user and his action in case of an incident
-- within a log file you should save: 
-	- HTTP status codes
-	- Time Stamps
-	- Usernames
-	- API endpoints/page locations
-	- IP addresses

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SaaS/SaaS Stack Setup.md",
+                "file": "CGI/ARD/GCP K8S Access.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SaaS Stack Setup"
+              "title": "GCP K8S Access"
             }
           }
         ]
@@ -41,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -78,7 +80,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 397.5
+    "width": 244.05078125
   },
   "right": {
     "id": "f0b55728a4fa4db9",
@@ -131,58 +133,57 @@
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "command-palette:Open command palette": false,
-      "markdown-importer:Open format converter": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
   "active": "be308798ecc51036",
   "lastOpenFiles": [
-    "SaaS/attachments/Pasted image 20260716164022.png",
-    "SaaS/attachments/Pasted image 20260716163757.png",
-    "SaaS/SaaS Stack Setup.md",
-    "SaaS/attachments/Pasted image 20260716164041.png",
-    "SaaS/attachments/Screenshot 2026-07-25 at 21.35.56.png",
-    "SaaS/attachments/Pasted image 20260716164537.png",
-    "SaaS/attachments/Pasted image 20260725211104.png",
-    "Cloud/SaaS Local Development OLD.md",
-    "Cloud/SaaS Stack OLD.md",
-    "SaaS/attachments/Pasted image 20260725200858.png",
-    "SaaS/attachments/Pasted image 20260725195927.png",
-    "SaaS/attachments/Pasted image 20260725192837.png",
-    "SaaS/attachments/Pasted image 20260720163232.png",
-    "SaaS/attachments/Screenshot 2026-07-18 at 18.35.29.png",
     "SaaS/SaaS Local Development.md",
-    "Untitled.canvas",
-    "Cloud/Kubernetes.md",
-    "SaaS/attachments",
-    "SaaS",
-    "Cloud/Untitled.base",
-    "DevOps/DevOps.md",
-    "Operating-Systems/Operating-Systems.md",
-    "Software-Engineering/Web/IIFBB - Proxify Docs.md",
+    "HomeLab/Reolink Camera Setup.md",
+    "CGI/ARD/GCP K8S Access.md",
+    "Software-Engineering/VIM.md",
+    "CGI/ARD",
+    "CGI",
+    "README.md",
+    "SaaS/SaaS Stack Setup.md",
+    "Software-Engineering/Software-Engineering.md",
+    "Software-Engineering/oAuth.md",
+    "Software-Engineering/GIT.md",
+    "Software-Engineering/Web/Media Queries.md",
+    "Software-Engineering/Web/DOM - Document Object Model.md",
+    "Software-Engineering/Web/Document Object Model DOM.md",
+    "Server-Administration/Web Server.md",
     "Server-Administration/Sytemd and Systemctl.md",
-    "Cloud/AWS/AWS Certification Preperation.md",
-    "Cloud/AWS/EC2 User Data and Meta Data Example.md",
-    "Cloud/AWS/attachments",
-    "Cloud/AWS/NACL vs Security Group.md",
+    "Server-Administration/Server-Administration.md",
+    "Server-Administration/RAID.md",
+    "SaaS/Untitled.md",
+    "Operating-Systems/Package-Manager.md",
+    "Operating-Systems/Operating-Systems.md",
+    "Operating-Systems/Windows/Windows File System NFTS.md",
+    "Operating-Systems/Windows/Windows Firewall.md",
+    "Operating-Systems/Windows/Account Types.md",
+    "Networks/Network-Devices/Repeater.md",
+    "Networks/Network-Devices/Hub.md",
+    "Networks/ICMP.md",
+    "Networks/HTTP.md",
+    "Cloud/AWS/attachments/D712E9A1-0F08-41B0-9202-1F4822E40586_1_105_c.jpeg",
+    "Cloud/Untitled.base",
     "Cloud/AWS/AWS+CSAA+Exam+Cram.pdf",
     "Cloud/AWS/AWS+Cloud+Practitioner+Exam+Cram.pdf",
-    "Software-Engineering/oAuth.md",
-    "Software-Engineering/oAuth/OIDC.md",
-    "Server-Administration/RAID.md",
-    "Software-Engineering/oAuth",
-    "IT-Security/Web/SQL Injection.md",
-    "IT-Security/Web/Burp Suite.md",
-    "IT-Security/Web/File Inclusion.md",
-    "IT-Security/Web/OSINT.md",
-    "Cloud/AWS",
-    "Software-Engineering/GIT.md",
-    "Software-Engineering/Web/Main CSS.md",
-    "Software-Engineering/Web/CSS Flexbox.md",
-    "Software-Engineering/Web/React/useReducer.md",
-    "Software-Engineering/Web/React/useCallback.md",
-    "Software-Engineering/Web/React/Redux.md",
-    "Software-Engineering/Web/React",
-    "IT-Security/Untitled"
+    "HomeLab/attachments/Screenshot 2026-10-17 at 18.28.21.png",
+    "HomeLab/attachments",
+    "HomeLab",
+    "Backups/attachments/Pasted image 20260819190926.png",
+    "Backups/attachments/Pasted image 20260819023031.png",
+    "Backups/attachments/Pasted image 20260819015318.png",
+    "Backups/attachments/Pasted image 20260819015259.png",
+    "Backups/attachments/Pasted image 20260819015141.png",
+    "Backups/attachments/Pasted image 20260819014854.png",
+    "Backups/attachments",
+    "Untitled.canvas",
+    "Backups",
+    "SaaS/attachments/Pasted image 20260716164022.png",
+    "SaaS/attachments/Pasted image 20260716163757.png",
+    "SaaS/attachments"
   ]
 }
