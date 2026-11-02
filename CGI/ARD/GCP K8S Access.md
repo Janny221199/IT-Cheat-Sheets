@@ -25,5 +25,5 @@ gcloud compute ssh bastion --project=ard-common --zone=europe-west3-a --tunnel-t
 
 Set environment variable HTTPS_PROXY for using the Bastion Host
 ```zsh
-HTTPS_PROXY=127.0.0.1:8888 kubectl get pods
+export HTTPS_PROXY=127.0.0.1:8888
 ```
